@@ -1,0 +1,116 @@
+@use 'variables' as *;
+
+/* ================================================================
+   SPACING & GRID — Custom Properties
+   Regent's University London Design System
+   ================================================================ */
+
+:root {
+  /* ── Spacing Scale ── */
+  --sp-0:  #{$spacing-0};
+  --sp-4:  #{$spacing-4};
+  --sp-8:  #{$spacing-8};
+  --sp-16: #{$spacing-16};
+  --sp-24: #{$spacing-24};
+  --sp-32: #{$spacing-32};
+  --sp-48: #{$spacing-48};
+  --sp-64: #{$spacing-64};
+  --sp-96: #{$spacing-96};
+
+  /* ── Border Radius ── */
+  --radius-xs: #{$border-radius-xs};
+  --radius-s:  #{$border-radius-s};
+  --radius-m:  #{$border-radius-m};
+  --radius-l:  #{$border-radius-l};
+
+  /* ── Border Width ── */
+  --border-xs: #{$border-width-xs};
+  --border-s:  #{$border-width-s};
+  --border-m:  #{$border-width-m};
+  --border-l:  #{$border-width-l};
+
+  /* ── Opacity ── */
+  --opacity-0:   #{$opacity-0};
+  --opacity-5:   #{$opacity-5};
+  --opacity-20:  #{$opacity-20};
+  --opacity-40:  #{$opacity-40};
+  --opacity-60:  #{$opacity-60};
+  --opacity-80:  #{$opacity-80};
+  --opacity-100: #{$opacity-100};
+
+  /* ── Grid — Desktop (1440px) ── */
+  --grid-gutter: #{$grid-desktop-gutter};
+  --grid-max:    #{$grid-desktop-max};
+  --grid-gap:    #{$grid-desktop-gap};
+  --grid-1col:   #{$grid-desktop-col-1};
+  --grid-2col:   #{$grid-desktop-col-2};
+  --grid-3col:   #{$grid-desktop-col-3};
+  --grid-4col:   #{$grid-desktop-col-4};
+  --grid-5col:   #{$grid-desktop-col-5};
+  --grid-6col:   #{$grid-desktop-col-6};
+  --grid-7col:   #{$grid-desktop-col-7};
+  --grid-8col:   #{$grid-desktop-col-8};
+  --grid-9col:   #{$grid-desktop-col-9};
+  --grid-10col:  #{$grid-desktop-col-10};
+  --grid-11col:  #{$grid-desktop-col-11};
+  --grid-12col:  #{$grid-desktop-col-12};
+}
+
+/* ── Responsive Grid Overrides ── */
+@media (max-width: 1279px) {
+  :root {
+    --grid-gutter: #{$grid-tablet-gutter};
+    --grid-gap:    #{$grid-tablet-gap};
+    --grid-1col:   #{$grid-tablet-col-1};
+    --grid-2col:   #{$grid-tablet-col-2};
+    --grid-3col:   #{$grid-tablet-col-3};
+    --grid-4col:   #{$grid-tablet-col-4};
+    --grid-5col:   #{$grid-tablet-col-5};
+    --grid-6col:   #{$grid-tablet-col-6};
+    --grid-7col:   #{$grid-tablet-col-7};
+    --grid-8col:   #{$grid-tablet-col-8};
+    --grid-9col:   #{$grid-tablet-col-9};
+    --grid-10col:  #{$grid-tablet-col-10};
+    --grid-11col:  #{$grid-tablet-col-11};
+    --grid-12col:  #{$grid-tablet-col-12};
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --grid-gutter: #{$grid-mobile-gutter};
+    --grid-gap:    #{$grid-mobile-gap};
+    --grid-1col:   #{$grid-mobile-col};
+    --grid-2col:   #{$grid-mobile-col};
+    --grid-3col:   #{$grid-mobile-col};
+    --grid-4col:   #{$grid-mobile-col};
+    --grid-5col:   #{$grid-mobile-col};
+    --grid-6col:   #{$grid-mobile-col};
+    --grid-7col:   #{$grid-mobile-col};
+    --grid-8col:   #{$grid-mobile-col};
+    --grid-9col:   #{$grid-mobile-col};
+    --grid-10col:  #{$grid-mobile-col};
+    --grid-11col:  #{$grid-mobile-col};
+    --grid-12col:  #{$grid-mobile-col};
+  }
+}
+
+@media (min-width: 1920px) {
+  :root {
+    --grid-gutter: #{$grid-wide-gutter};
+    --grid-max:    #{$grid-wide-max};
+    --grid-gap:    #{$grid-wide-gap};
+    --grid-1col:   #{$grid-wide-col-1};
+    --grid-2col:   #{$grid-wide-col-2};
+    --grid-3col:   #{$grid-wide-col-3};
+    --grid-4col:   #{$grid-wide-col-4};
+    --grid-5col:   #{$grid-wide-col-5};
+    --grid-6col:   #{$grid-wide-col-6};
+    --grid-7col:   #{$grid-wide-col-7};
+    --grid-8col:   #{$grid-wide-col-8};
+    --grid-9col:   #{$grid-wide-col-9};
+    --grid-10col:  #{$grid-wide-col-10};
+    --grid-11col:  #{$grid-wide-col-11};
+    --grid-12col:  #{$grid-wide-col-12};
+  }
+}

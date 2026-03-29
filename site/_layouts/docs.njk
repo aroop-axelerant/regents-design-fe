@@ -1,0 +1,34 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<div class="docs">
+  <aside class="docs__sidebar" aria-label="Section navigation">
+    <nav class="docs__nav">
+      {% if sidebar %}
+        {% for group in sidebar %}
+          <div class="docs__nav-group">
+            <h3 class="docs__nav-heading">{{ group.title }}</h3>
+            {% for item in group.items %}
+              <a href="{{ item.url }}" class="docs__nav-link {% if item.url == page.url %}docs__nav-link--active{% endif %}">
+                {{ item.label }}
+              </a>
+            {% endfor %}
+          </div>
+        {% endfor %}
+      {% endif %}
+    </nav>
+  </aside>
+  <main class="docs__main">
+    <div class="docs__header">
+      <span class="text-overline color-brand">{{ section | default("Design System") }}</span>
+      <h1 class="text-display-s">{{ title }}</h1>
+      {% if description %}
+        <p class="text-body-lg color-muted">{{ description }}</p>
+      {% endif %}
+    </div>
+    <div class="docs__content">
+      {{ content | safe }}
+    </div>
+  </main>
+</div>
+{% endblock %}

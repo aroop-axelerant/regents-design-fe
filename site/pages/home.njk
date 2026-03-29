@@ -1,0 +1,53 @@
+---
+layout: default.njk
+title: "Regent's Design System"
+section: home
+permalink: /
+---
+
+<section class="hero hero--dark" style="min-height: 520px;">
+  <div class="hero__bg">
+    <div style="background: var(--gradient-editorial); width: 100%; height: 100%;"></div>
+  </div>
+  <div class="hero__content" style="max-width: var(--grid-8col); margin: 0 auto; text-align: center;">
+    <span class="hero__eyebrow">Design System</span>
+    <h1 class="hero__title">Regent's University London</h1>
+    <p class="hero__subtitle">A comprehensive design system built with SCSS, Nunjucks, Eleventy, and Style Dictionary.</p>
+    <div class="hero__actions" style="justify-content: center;">
+      <a href="/foundation/" class="btn btn--primary-inverted">Explore Foundation</a>
+      <a href="/components/" class="btn btn--secondary-inverted">View Components</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="stack stack--16 text-center mb-48">
+      <h2 class="text-h1">Five Layers</h2>
+      <p class="text-subtitle" style="max-width: var(--grid-6col); margin: 0 auto;">Organised from atomic tokens to fully assembled pages.</p>
+    </div>
+    <div class="grid grid--3">
+      <a href="/foundation/" class="card card--feature card--feature-yellow" style="text-decoration: none;">
+        <div class="card__body">
+          <span class="text-overline">Layer 1</span>
+          <h3 class="card__title">Foundation</h3>
+          <p class="card__description">Design tokens — colors, spacing, typography, radius.</p>
+        </div>
+      </a>
+      <a href="/components/" class="card card--feature card--feature-violet" style="text-decoration: none;">
+        <div class="card__body">
+          <span class="text-overline">Layer 2</span>
+          <h3 class="card__title">Components</h3>
+          <p class="card__description">Buttons, cards, forms, tabs, accordions, heroes.</p>
+        </div>
+      </a>
+      <a href="/layouts/" class="card card--feature card--feature-peach" style="text-decoration: none;">
+        <div class="card__body">
+          <span class="text-overline">Layer 3</span>
+          <h3 class="card__title">Layouts</h3>
+          <p class="card__description">Grid system, containers, structural spacing.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

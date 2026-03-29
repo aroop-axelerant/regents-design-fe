@@ -1,0 +1,7 @@
+node_modules/
+dist/
+_site/
+.DS_Store
+src/styles/foundation/_variables.scss
+src/styles/foundation/_css-variables.scss
+site/_data/tokens.json

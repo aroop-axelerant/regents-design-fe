@@ -1,0 +1,41 @@
+---
+layout: docs.njk
+title: Shadows & Elevation
+description: Box shadows, elevation levels, and z-index scale.
+section: Foundation
+sidebar: navigation.foundation
+---
+
+<div class="docs-section">
+  <h2 class="docs-section__title">Box Shadows</h2>
+  <p class="docs-section__description">Three elevation levels for depth and hierarchy.</p>
+  <div class="ds-preview">
+    <div class="ds-preview__content">
+      <div style="width: 160px; height: 120px; background: var(--color-bg-surface); border-radius: var(--radius-s); box-shadow: var(--shadow-sm); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: var(--sp-4);">
+        <span class="text-label-m">Small</span>
+        <span class="text-caption color-muted">--shadow-sm</span>
+      </div>
+      <div style="width: 160px; height: 120px; background: var(--color-bg-surface); border-radius: var(--radius-s); box-shadow: var(--shadow-md); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: var(--sp-4);">
+        <span class="text-label-m">Medium</span>
+        <span class="text-caption color-muted">--shadow-md</span>
+      </div>
+      <div style="width: 160px; height: 120px; background: var(--color-bg-surface); border-radius: var(--radius-s); box-shadow: var(--shadow-lg); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: var(--sp-4);">
+        <span class="text-label-m">Large</span>
+        <span class="text-caption color-muted">--shadow-lg</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="docs-section">
+  <h2 class="docs-section__title">Z-Index Scale</h2>
+  <p class="docs-section__description">Predictable stacking order across the interface.</p>
+  <div class="stack stack--8">
+    <div class="cluster cluster--16"><span class="chip chip--outline" style="min-width: 80px; justify-content: center;">0</span> <span class="text-body">Base — default content</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline" style="min-width: 80px; justify-content: center;">10</span> <span class="text-body">Raised — cards, elevated elements</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline" style="min-width: 80px; justify-content: center;">100</span> <span class="text-body">Overlay — dropdowns, tooltips</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline" style="min-width: 80px; justify-content: center;">200</span> <span class="text-body">Sticky — fixed headers, sidebars</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline" style="min-width: 80px; justify-content: center;">300</span> <span class="text-body">Modal — dialogs, lightboxes</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline" style="min-width: 80px; justify-content: center;">400</span> <span class="text-body">Toast — notifications</span></div>
+  </div>
+</div>

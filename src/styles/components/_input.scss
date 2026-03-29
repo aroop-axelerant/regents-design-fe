@@ -1,0 +1,168 @@
+/* ================================================================
+   FORM / INPUT COMPONENTS
+   ================================================================ */
+
+/* ── Form Group ── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+/* ── Labels ── */
+.form-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-label-m);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-ui);
+  color: var(--color-text);
+
+  .form-label__required {
+    color: var(--color-error);
+    margin-left: 2px;
+  }
+}
+
+/* ── Helper Text ── */
+.form-helper {
+  font-size: var(--text-helper);
+  line-height: var(--lh-helper);
+  color: var(--color-text-secondary);
+}
+
+/* ── Error Message ── */
+.form-error {
+  font-size: var(--text-helper);
+  line-height: var(--lh-helper);
+  color: var(--color-error);
+}
+
+/* ── Text Input ── */
+.input {
+  width: 100%;
+  padding: 12px var(--sp-16);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--lh-input);
+  color: var(--color-text);
+  background-color: var(--color-bg-surface);
+  border: var(--border-xs) solid var(--color-border);
+  border-radius: var(--radius-s);
+  transition: border-color var(--ease), box-shadow var(--ease);
+
+  &::placeholder {
+    color: var(--color-text-tertiary);
+  }
+
+  &:hover {
+    border-color: var(--color-border-strong);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-action-primary);
+    box-shadow: 0 0 0 3px var(--color-border-focus);
+  }
+
+  &--error {
+    border-color: var(--color-border-error);
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(214, 59, 59, 0.2);
+    }
+  }
+
+  &:disabled {
+    opacity: var(--opacity-40);
+    pointer-events: none;
+    background-color: var(--color-charcoal-10);
+  }
+}
+
+/* ── Textarea ── */
+.textarea {
+  @extend .input;
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ── Select ── */
+.select {
+  @extend .input;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%230b191a' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--sp-16) center;
+  padding-right: var(--sp-48);
+}
+
+/* ── Checkbox ── */
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-8);
+  cursor: pointer;
+
+  &__input {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: var(--border-xs) solid var(--color-border-strong);
+    border-radius: var(--radius-xs);
+    background-color: var(--color-bg-surface);
+    transition: background-color var(--ease), border-color var(--ease);
+    flex-shrink: 0;
+
+    &:checked {
+      background-color: var(--color-action-primary);
+      border-color: var(--color-action-primary);
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='10' viewBox='0 0 12 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5L4.5 8.5L11 1.5' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--color-border-focus);
+      outline-offset: 2px;
+    }
+  }
+
+  &__label {
+    font-size: var(--text-body);
+    line-height: var(--lh-body);
+  }
+}
+
+/* ── Radio ── */
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-8);
+  cursor: pointer;
+
+  &__input {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: var(--border-xs) solid var(--color-border-strong);
+    border-radius: 50%;
+    background-color: var(--color-bg-surface);
+    transition: border-color var(--ease);
+    flex-shrink: 0;
+
+    &:checked {
+      border-color: var(--color-action-primary);
+      border-width: 6px;
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--color-border-focus);
+      outline-offset: 2px;
+    }
+  }
+
+  &__label {
+    font-size: var(--text-body);
+    line-height: var(--lh-body);
+  }
+}

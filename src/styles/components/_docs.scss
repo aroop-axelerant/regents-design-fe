@@ -1,0 +1,191 @@
+/* ================================================================
+   DOCS LAYOUT — Design System Documentation Pages
+   ================================================================ */
+
+.docs {
+  display: flex;
+  min-height: 100vh;
+
+  /* ── Sidebar ── */
+  &__sidebar {
+    position: sticky;
+    top: 0;
+    width: 260px;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: var(--color-bg-dark);
+    padding: var(--sp-32) var(--sp-24);
+    flex-shrink: 0;
+  }
+
+  &__nav-group {
+    margin-bottom: var(--sp-32);
+  }
+
+  &__nav-heading {
+    font-family: var(--font-sans);
+    font-size: var(--text-overline);
+    font-weight: var(--fw-bold);
+    letter-spacing: var(--ls-widest);
+    text-transform: uppercase;
+    color: var(--color-charcoal-40);
+    margin-bottom: var(--sp-8);
+  }
+
+  &__nav-link {
+    display: block;
+    font-size: var(--text-small);
+    color: var(--color-charcoal-30);
+    text-decoration: none;
+    padding: var(--sp-4) var(--sp-16);
+    border-left: 2px solid transparent;
+    transition: color var(--ease), border-color var(--ease);
+
+    &:hover {
+      color: var(--color-text-inverted);
+    }
+
+    &--active {
+      color: var(--color-bg-accent);
+      border-left-color: var(--color-bg-accent);
+    }
+  }
+
+  /* ── Main Content ── */
+  &__main {
+    flex: 1;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: var(--sp-64) var(--sp-48);
+  }
+
+  &__header {
+    margin-bottom: var(--sp-48);
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-8);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-64);
+  }
+
+  @media (max-width: 1279px) {
+    &__sidebar {
+      width: 220px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+
+    &__sidebar {
+      position: relative;
+      width: 100%;
+      height: auto;
+    }
+
+    &__main {
+      padding: var(--sp-32) var(--sp-16);
+    }
+  }
+}
+
+/* ── Preview Canvas ── */
+.ds-preview {
+  border: var(--border-xs) solid var(--color-border);
+  border-radius: var(--radius-s);
+  background-color: var(--color-bg-surface);
+  padding: var(--sp-32);
+  position: relative;
+
+  &--dark   { background-color: var(--color-bg-dark); }
+  &--brand  { background-color: var(--color-bg-brand); }
+  &--warm   { background-color: var(--color-bg); }
+
+  &__label {
+    position: absolute;
+    top: var(--sp-8);
+    right: var(--sp-8);
+    color: var(--color-text-tertiary);
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-16);
+    align-items: center;
+  }
+}
+
+/* ── Section within docs ── */
+.docs-section {
+  &__title {
+    font-family: var(--font-sans);
+    font-size: var(--text-h3);
+    font-weight: var(--fw-medium);
+    margin-bottom: var(--sp-8);
+  }
+
+  &__description {
+    font-size: var(--text-body);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--sp-24);
+  }
+}
+
+/* ── Color Swatch Grid ── */
+.swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--sp-16);
+}
+
+.swatch {
+  &__color {
+    height: 80px;
+    border-radius: var(--radius-s) var(--radius-s) 0 0;
+    border: var(--border-xs) solid var(--color-border);
+  }
+
+  &__info {
+    padding: var(--sp-8);
+    background-color: var(--color-bg-surface);
+    border: var(--border-xs) solid var(--color-border);
+    border-top: none;
+    border-radius: 0 0 var(--radius-s) var(--radius-s);
+  }
+
+  &__name {
+    font-size: var(--text-small);
+    font-weight: var(--fw-medium);
+    display: block;
+  }
+
+  &__value {
+    font-size: var(--text-caption);
+    color: var(--color-text-tertiary);
+    font-family: monospace;
+  }
+}
+
+/* ── Spacing bar demos ── */
+.spacing-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-16);
+
+  &__visual {
+    height: 24px;
+    background-color: var(--color-bg-accent);
+    border-radius: var(--radius-xs);
+  }
+
+  &__label {
+    font-size: var(--text-small);
+    font-family: monospace;
+    white-space: nowrap;
+  }
+}

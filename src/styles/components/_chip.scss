@@ -1,0 +1,81 @@
+/* ================================================================
+   CHIP / TAG COMPONENT
+   ================================================================ */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-4) var(--sp-16);
+  font-family: var(--font-sans);
+  font-size: var(--text-overline);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-comfortable);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  border: var(--border-xs) solid var(--color-border);
+  border-radius: var(--radius-l);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  white-space: nowrap;
+
+  /* ── Variants ── */
+  &--charcoal {
+    background-color: var(--color-charcoal);
+    color: var(--color-text-inverted);
+    border-color: var(--color-charcoal);
+  }
+
+  &--green {
+    background-color: var(--color-action-primary);
+    color: var(--color-action-primary-text);
+    border-color: var(--color-action-primary);
+  }
+
+  &--outline {
+    background-color: transparent;
+    border-color: var(--color-border-strong);
+  }
+
+  &--yellow {
+    background-color: var(--color-bg-accent);
+    color: var(--color-charcoal);
+    border-color: var(--color-bg-accent);
+  }
+
+  &--yellow-light {
+    background-color: var(--color-bg-zingy-light);
+    color: var(--color-charcoal);
+    border-color: var(--color-bg-zingy-light);
+  }
+
+  &--violet {
+    background-color: var(--color-bg-violet);
+    color: var(--color-charcoal);
+    border-color: var(--color-bg-violet);
+  }
+
+  &--peach {
+    background-color: var(--color-bg-peach);
+    color: var(--color-charcoal);
+    border-color: var(--color-bg-peach);
+  }
+
+  /* ── Dismissible ── */
+  &__close {
+    display: inline-flex;
+    cursor: pointer;
+    margin-left: var(--sp-4);
+    opacity: 0.6;
+    transition: opacity var(--ease);
+
+    &:hover {
+      opacity: 1;
+    }
+
+    svg {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}

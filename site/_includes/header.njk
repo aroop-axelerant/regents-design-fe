@@ -1,0 +1,16 @@
+<header class="header">
+  <div class="header__inner">
+    <div class="header__pill">
+      <a href="/" class="header__logo" aria-label="Regent's University London">
+        <img src="/assets/full-logo.svg" alt="Regent's University London" width="142" height="29">
+      </a>
+      <nav class="header__nav" aria-label="Main navigation">
+        <a href="/foundation/" class="header__nav-link {% if section == 'foundation' %}header__nav-link--active{% endif %}">Foundation</a>
+        <a href="/components/" class="header__nav-link {% if section == 'components' %}header__nav-link--active{% endif %}">Components</a>
+        <a href="/layouts/" class="header__nav-link {% if section == 'layouts' %}header__nav-link--active{% endif %}">Layouts</a>
+        <a href="/templates/" class="header__nav-link {% if section == 'templates' %}header__nav-link--active{% endif %}">Templates</a>
+        <a href="/pages/" class="header__nav-link {% if section == 'pages' %}header__nav-link--active{% endif %}">Pages</a>
+      </nav>
+    </div>
+  </div>
+</header>

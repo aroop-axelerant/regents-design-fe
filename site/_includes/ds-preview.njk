@@ -1,0 +1,12 @@
+{# Design System Preview Canvas
+   Usage: {% call preview("dark") %}...content...{% endcall %}
+   Variants: default (white), dark, brand, warm
+#}
+{% macro preview(variant="", label="") %}
+<div class="ds-preview{% if variant %} ds-preview--{{ variant }}{% endif %}">
+  {% if label %}<span class="ds-preview__label text-caption">{{ label }}</span>{% endif %}
+  <div class="ds-preview__content">
+    {{ caller() }}
+  </div>
+</div>
+{% endmacro %}

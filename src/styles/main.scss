@@ -1,0 +1,39 @@
+/* ================================================================
+   MAIN — Barrel file
+   Regent's University London Design System
+
+   Import order:
+   1. Foundation (variables, reset, tokens)
+   2. Components
+   3. Layouts
+   4. Utilities (overrides last)
+   ================================================================ */
+
+/* ── 1. Foundation ── */
+@use 'foundation/css-variables' as *;
+@use 'foundation/reset' as *;
+@use 'foundation/colors' as *;
+@use 'foundation/typography' as *;
+@use 'foundation/spacing' as *;
+
+/* ── 2. Components ── */
+@use 'components/link' as *;
+@use 'components/button' as *;
+@use 'components/input' as *;
+@use 'components/card' as *;
+@use 'components/chip' as *;
+@use 'components/tabs' as *;
+@use 'components/accordion' as *;
+@use 'components/hero' as *;
+@use 'components/image-text' as *;
+@use 'components/header' as *;
+@use 'components/footer' as *;
+@use 'components/newsletter' as *;
+@use 'components/docs' as *;
+
+/* ── 3. Layouts ── */
+@use 'layouts/grid' as *;
+@use 'layouts/container' as *;
+
+/* ── 4. Utilities ── */
+@use 'utilities/helpers' as *;

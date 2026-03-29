@@ -1,0 +1,60 @@
+{
+  "grid": {
+    "$type": "dimension",
+    "desktop": {
+      "gutter": { "$value": "64px" },
+      "max": { "$value": "1440px" },
+      "gap": { "$value": "32px" },
+      "col-1": { "$value": "80px" },
+      "col-2": { "$value": "192px" },
+      "col-3": { "$value": "304px" },
+      "col-4": { "$value": "416px" },
+      "col-5": { "$value": "528px" },
+      "col-6": { "$value": "640px" },
+      "col-7": { "$value": "752px" },
+      "col-8": { "$value": "864px" },
+      "col-9": { "$value": "976px" },
+      "col-10": { "$value": "1088px" },
+      "col-11": { "$value": "1200px" },
+      "col-12": { "$value": "1312px" }
+    },
+    "tablet": {
+      "gutter": { "$value": "32px" },
+      "gap": { "$value": "24px" },
+      "col-1": { "$value": "61px" },
+      "col-2": { "$value": "155px" },
+      "col-3": { "$value": "248px" },
+      "col-4": { "$value": "341px" },
+      "col-5": { "$value": "435px" },
+      "col-6": { "$value": "528px" },
+      "col-7": { "$value": "621px" },
+      "col-8": { "$value": "715px" },
+      "col-9": { "$value": "808px" },
+      "col-10": { "$value": "901px" },
+      "col-11": { "$value": "995px" },
+      "col-12": { "$value": "1088px" }
+    },
+    "mobile": {
+      "gutter": { "$value": "16px" },
+      "gap": { "$value": "16px" },
+      "col": { "$value": "361px" }
+    },
+    "wide": {
+      "gutter": { "$value": "208px" },
+      "max": { "$value": "1920px" },
+      "gap": { "$value": "32px" },
+      "col-1": { "$value": "96px" },
+      "col-2": { "$value": "224px" },
+      "col-3": { "$value": "352px" },
+      "col-4": { "$value": "480px" },
+      "col-5": { "$value": "608px" },
+      "col-6": { "$value": "736px" },
+      "col-7": { "$value": "864px" },
+      "col-8": { "$value": "992px" },
+      "col-9": { "$value": "1120px" },
+      "col-10": { "$value": "1248px" },
+      "col-11": { "$value": "1376px" },
+      "col-12": { "$value": "1504px" }
+    }
+  }
+}

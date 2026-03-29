@@ -1,0 +1,9 @@
+{
+  "border-radius": {
+    "$type": "dimension",
+    "xs": { "$value": "4px" },
+    "s": { "$value": "8px" },
+    "m": { "$value": "16px" },
+    "l": { "$value": "999px" }
+  }
+}

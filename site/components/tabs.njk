@@ -1,0 +1,50 @@
+---
+layout: docs.njk
+title: Tabs
+description: Horizontal tabs for organising content into panels.
+section: Components
+sidebar: navigation.components
+---
+
+<div class="docs-section">
+  <h2 class="docs-section__title">Default Tabs</h2>
+  <div class="ds-preview">
+    <div class="ds-preview__content" style="flex-direction: column; align-items: stretch;">
+      <div class="tabs">
+        <div class="tabs__list" role="tablist">
+          <button class="tabs__trigger tabs__trigger--active" role="tab" aria-selected="true">Overview</button>
+          <button class="tabs__trigger" role="tab" aria-selected="false">Modules</button>
+          <button class="tabs__trigger" role="tab" aria-selected="false">Entry Requirements</button>
+          <button class="tabs__trigger" role="tab" aria-selected="false" disabled>Disabled</button>
+        </div>
+        <div class="tabs__panel" role="tabpanel">
+          <p class="text-body">This course provides a comprehensive foundation in business management principles.</p>
+        </div>
+        <div class="tabs__panel" role="tabpanel" hidden>
+          <p class="text-body">Year 1: Introduction to Business, Marketing Fundamentals, Economics.</p>
+        </div>
+        <div class="tabs__panel" role="tabpanel" hidden>
+          <p class="text-body">UCAS points: 112-128. IELTS: 6.0 overall.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="docs-section">
+  <h2 class="docs-section__title">Pill Tabs</h2>
+  <div class="ds-preview">
+    <div class="ds-preview__content" style="flex-direction: column; align-items: stretch;">
+      <div class="tabs tabs--pills">
+        <div class="tabs__list" role="tablist">
+          <button class="tabs__trigger tabs__trigger--active" role="tab" aria-selected="true">Undergraduate</button>
+          <button class="tabs__trigger" role="tab" aria-selected="false">Postgraduate</button>
+          <button class="tabs__trigger" role="tab" aria-selected="false">Short Courses</button>
+        </div>
+        <div class="tabs__panel" role="tabpanel">
+          <p class="text-body">Explore our undergraduate degree programmes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

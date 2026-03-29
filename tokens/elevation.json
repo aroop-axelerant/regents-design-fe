@@ -1,0 +1,17 @@
+{
+  "shadow": {
+    "$type": "shadow",
+    "sm": { "$value": { "offsetX": "0px", "offsetY": "1px", "blur": "4px", "spread": "0px", "color": "rgba(11, 25, 26, 0.07)" } },
+    "md": { "$value": { "offsetX": "0px", "offsetY": "4px", "blur": "16px", "spread": "0px", "color": "rgba(11, 25, 26, 0.10)" } },
+    "lg": { "$value": { "offsetX": "0px", "offsetY": "12px", "blur": "40px", "spread": "0px", "color": "rgba(11, 25, 26, 0.14)" } }
+  },
+  "z-index": {
+    "$type": "number",
+    "base": { "$value": 0 },
+    "raised": { "$value": 10 },
+    "overlay": { "$value": 100 },
+    "sticky": { "$value": 200 },
+    "modal": { "$value": 300 },
+    "toast": { "$value": 400 }
+  }
+}

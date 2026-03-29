@@ -1,0 +1,100 @@
+// stylelint-disable
+@use 'variables' as *;
+
+/* ================================================================
+   COLORS — CSS Custom Properties & Semantic Classes
+   Regent's University London Design System
+   ================================================================ */
+
+:root {
+  /* ── Primitive Colors ── */
+  --color-white:       #{$color-neutral-white};
+  --color-off-white:   #{$color-neutral-off-white};
+  --color-charcoal:    #{$color-neutral-charcoal};
+
+  --color-charcoal-90: #{$color-charcoal-scale-90};
+  --color-charcoal-80: #{$color-charcoal-scale-80};
+  --color-charcoal-70: #{$color-charcoal-scale-70};
+  --color-charcoal-60: #{$color-charcoal-scale-60};
+  --color-charcoal-50: #{$color-charcoal-scale-50};
+  --color-charcoal-40: #{$color-charcoal-scale-40};
+  --color-charcoal-30: #{$color-charcoal-scale-30};
+  --color-charcoal-20: #{$color-charcoal-scale-20};
+  --color-charcoal-10: #{$color-charcoal-scale-10};
+
+  --color-zingy-yellow:    #{$color-youthful-brights-zingy-yellow};
+  --color-zingy-yellow-50: #{$color-youthful-brights-zingy-yellow-50};
+  --color-violet:          #{$color-youthful-brights-violet};
+  --color-soft-peach:      #{$color-youthful-brights-soft-peach};
+  --color-soft-peach-50:   #{$color-youthful-brights-soft-peach-50};
+
+  --color-forest-green:     #{$color-legacy-forest-green};
+  --color-powdered-blue:    #{$color-legacy-powdered-blue};
+  --color-powdered-blue-50: #{$color-legacy-powdered-blue-50};
+  --color-deep-red:         #{$color-legacy-deep-red};
+  --color-deep-red-50:      #{$color-legacy-deep-red-50};
+
+  --color-dark-40:  rgba(11, 25, 26, 0.40);
+  --color-light-40: rgba(255, 255, 255, 0.40);
+
+  /* ── Semantic: Action ── */
+  --color-action-primary:       var(--color-forest-green);
+  --color-action-primary-hover: #{$color-extra-primary-hover};
+  --color-action-primary-text:  var(--color-white);
+
+  /* ── Semantic: Backgrounds ── */
+  --color-bg:             var(--color-off-white);
+  --color-bg-surface:     var(--color-white);
+  --color-bg-dark:        var(--color-charcoal);
+  --color-bg-accent:      var(--color-zingy-yellow);
+  --color-bg-brand:       var(--color-forest-green);
+  --color-bg-zingy-light: var(--color-zingy-yellow-50);
+  --color-bg-violet:      var(--color-violet);
+  --color-bg-peach:       var(--color-soft-peach-50);
+
+  /* ── Semantic: Text ── */
+  --color-text:          var(--color-charcoal);
+  --color-text-secondary: var(--color-charcoal-60);
+  --color-text-tertiary:  var(--color-charcoal-40);
+  --color-text-inverted:  var(--color-white);
+  --color-text-brand:     var(--color-forest-green);
+  --color-text-disabled:  var(--color-charcoal-40);
+
+  /* ── Semantic: Borders ── */
+  --color-border:        var(--color-charcoal-20);
+  --color-border-strong: var(--color-charcoal-40);
+  --color-border-focus:  var(--color-zingy-yellow);
+  --color-border-error:  #{$color-extra-error-red};
+
+  /* ── Semantic: States ── */
+  --color-error:    #{$color-extra-error-red};
+  --color-success:  var(--color-forest-green);
+  --color-disabled: var(--color-charcoal-20);
+
+  /* ── Gradients ── */
+  --gradient-editorial: linear-gradient(100deg, var(--color-violet) 0%, var(--color-soft-peach) 42%, var(--color-forest-green) 100%);
+  --gradient-hero-dark:  linear-gradient(135deg, var(--color-charcoal-90) 0%, var(--color-charcoal-70) 100%);
+  --gradient-accent:     linear-gradient(180deg, var(--color-violet) 0%, var(--color-soft-peach-50) 100%);
+  --gradient-warm:       linear-gradient(135deg, var(--color-soft-peach-50) 0%, var(--color-soft-peach) 100%);
+  --gradient-ocean:      linear-gradient(135deg, var(--color-forest-green) 0%, var(--color-powdered-blue) 100%);
+  --gradient-neutral:    linear-gradient(135deg, var(--color-charcoal-10) 0%, var(--color-charcoal-20) 100%);
+
+  /* ── Shadows ── */
+  --shadow-sm:    0 1px 4px rgba(11, 25, 26, 0.07);
+  --shadow-md:    0 4px 16px rgba(11, 25, 26, 0.10);
+  --shadow-lg:    0 12px 40px rgba(11, 25, 26, 0.14);
+  --shadow-inset: inset 0 1px 2px rgba(11, 25, 26, 0.40);
+
+  /* ── Transitions ── */
+  --ease-fast: 150ms ease;
+  --ease:      200ms ease;
+  --ease-slow: 380ms ease;
+
+  /* ── Z-Index ── */
+  --z-base:    0;
+  --z-raised:  10;
+  --z-overlay: 100;
+  --z-sticky:  200;
+  --z-modal:   300;
+  --z-toast:   400;
+}

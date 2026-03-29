@@ -1,0 +1,31 @@
+{
+  "spacing": {
+    "$type": "dimension",
+    "0": { "$value": "0px" },
+    "4": { "$value": "4px" },
+    "8": { "$value": "8px" },
+    "16": { "$value": "16px" },
+    "24": { "$value": "24px" },
+    "32": { "$value": "32px" },
+    "48": { "$value": "48px" },
+    "64": { "$value": "64px" },
+    "96": { "$value": "96px" }
+  },
+  "border-width": {
+    "$type": "dimension",
+    "xs": { "$value": "1px" },
+    "s": { "$value": "2px" },
+    "m": { "$value": "4px" },
+    "l": { "$value": "8px" }
+  },
+  "opacity": {
+    "$type": "number",
+    "0": { "$value": 0 },
+    "5": { "$value": 0.05 },
+    "20": { "$value": 0.20 },
+    "40": { "$value": 0.40 },
+    "60": { "$value": 0.60 },
+    "80": { "$value": 0.80 },
+    "100": { "$value": 1 }
+  }
+}

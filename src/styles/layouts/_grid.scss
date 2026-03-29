@@ -1,0 +1,61 @@
+/* ================================================================
+   GRID SYSTEM
+   Regent's University London Design System
+   12-column responsive grid
+   ================================================================ */
+
+.grid {
+  display: grid;
+  gap: var(--grid-gap);
+  width: 100%;
+
+  /* ── Column configurations ── */
+  &--2  { grid-template-columns: repeat(2, 1fr); }
+  &--3  { grid-template-columns: repeat(3, 1fr); }
+  &--4  { grid-template-columns: repeat(4, 1fr); }
+  &--6  { grid-template-columns: repeat(6, 1fr); }
+  &--12 { grid-template-columns: repeat(12, 1fr); }
+
+  /* ── Asymmetric layouts ── */
+  &--8-4 { grid-template-columns: 2fr 1fr; }
+  &--4-8 { grid-template-columns: 1fr 2fr; }
+  &--9-3 { grid-template-columns: 3fr 1fr; }
+  &--3-9 { grid-template-columns: 1fr 3fr; }
+
+  /* ── Alignment ── */
+  &--center  { align-items: center; }
+  &--start   { align-items: start; }
+  &--end     { align-items: end; }
+  &--stretch { align-items: stretch; }
+
+  /* ── Responsive stacking ── */
+  @media (max-width: 1279px) {
+    &--2, &--3, &--4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &--8-4, &--4-8, &--9-3, &--3-9 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &--2, &--3, &--4, &--6,
+    &--8-4, &--4-8, &--9-3, &--3-9 {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* ── Column span utilities ── */
+.col-span-2  { grid-column: span 2; }
+.col-span-3  { grid-column: span 3; }
+.col-span-4  { grid-column: span 4; }
+.col-span-6  { grid-column: span 6; }
+.col-span-8  { grid-column: span 8; }
+.col-span-12 { grid-column: span 12; }
+
+@media (max-width: 767px) {
+  [class*='col-span-'] {
+    grid-column: span 1;
+  }
+}

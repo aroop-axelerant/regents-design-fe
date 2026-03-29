@@ -1,0 +1,78 @@
+/* ================================================================
+   ACCORDION COMPONENT
+   ================================================================ */
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+
+  /* ── Accordion Item ── */
+  &__item {
+    border-bottom: var(--border-xs) solid var(--color-border);
+  }
+
+  /* ── Trigger ── */
+  &__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--sp-24) 0;
+    font-family: var(--font-sans);
+    font-size: var(--text-h4);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-h4);
+    color: var(--color-text);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: color var(--ease);
+
+    &:hover {
+      color: var(--color-text-brand);
+    }
+  }
+
+  /* ── Icon ── */
+  &__icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    transition: transform var(--ease);
+
+    .accordion__item--open & {
+      transform: rotate(180deg);
+    }
+  }
+
+  /* ── Content ── */
+  &__content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height var(--ease-slow);
+
+    .accordion__item--open & {
+      max-height: 1000px;
+    }
+  }
+
+  &__body {
+    padding-bottom: var(--sp-24);
+    font-size: var(--text-body);
+    line-height: var(--lh-body);
+    color: var(--color-text-secondary);
+  }
+
+  /* ── Filled Variant ── */
+  &--filled {
+    gap: var(--sp-8);
+
+    .accordion__item {
+      background-color: var(--color-bg-surface);
+      border: var(--border-xs) solid var(--color-border);
+      border-radius: var(--radius-s);
+      padding: 0 var(--sp-24);
+    }
+  }
+}

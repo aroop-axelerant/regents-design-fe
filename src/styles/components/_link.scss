@@ -1,0 +1,47 @@
+/* ================================================================
+   LINK COMPONENT
+   ================================================================ */
+
+.link {
+  color: var(--color-text-brand);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  font-weight: var(--fw-semibold);
+  transition: color var(--ease), text-decoration-color var(--ease);
+
+  &:hover {
+    color: var(--color-action-primary-hover);
+  }
+
+  /* ── Inverted (on dark bg) ── */
+  &--inverted {
+    color: var(--color-text-inverted);
+
+    &:hover {
+      color: var(--color-bg-accent);
+    }
+  }
+
+  /* ── Brand ── */
+  &--brand {
+    color: var(--color-text-brand);
+  }
+
+  /* ── Arrow Link ── */
+  &--arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-8);
+    text-decoration: none;
+
+    &::after {
+      content: '\2192';
+      transition: transform var(--ease);
+    }
+
+    &:hover::after {
+      transform: translateX(4px);
+    }
+  }
+}

@@ -1,0 +1,66 @@
+---
+layout: docs.njk
+title: Forms
+description: Form elements including inputs, selects, checkboxes, and radios.
+section: Components
+sidebar: navigation.components
+---
+
+<div class="docs-section">
+  <h2 class="docs-section__title">Text Input</h2>
+  <div class="ds-preview">
+    <div class="ds-preview__content" style="flex-direction: column; align-items: stretch; max-width: 400px;">
+      <div class="form-group">
+        <label class="form-label">Full Name <span class="form-label__required">*</span></label>
+        <input type="text" class="input" placeholder="Enter your full name">
+        <span class="form-helper">As it appears on your passport</span>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="input input--error" value="invalid-email">
+        <span class="form-error">Please enter a valid email address</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="docs-section">
+  <h2 class="docs-section__title">Select</h2>
+  <div class="ds-preview">
+    <div class="ds-preview__content" style="flex-direction: column; align-items: stretch; max-width: 400px;">
+      <div class="form-group">
+        <label class="form-label">Course</label>
+        <select class="select">
+          <option>Select a course...</option>
+          <option>Business Management</option>
+          <option>Film, Media &amp; Performance</option>
+          <option>Psychology</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="docs-section">
+  <h2 class="docs-section__title">Checkboxes &amp; Radios</h2>
+  <div class="ds-preview">
+    <div class="ds-preview__content" style="flex-direction: column; align-items: flex-start; gap: var(--sp-16);">
+      <label class="checkbox">
+        <input type="checkbox" class="checkbox__input" checked>
+        <span class="checkbox__label">I agree to the terms and conditions</span>
+      </label>
+      <label class="checkbox">
+        <input type="checkbox" class="checkbox__input">
+        <span class="checkbox__label">Subscribe to newsletter</span>
+      </label>
+      <label class="radio">
+        <input type="radio" class="radio__input" name="study-mode" checked>
+        <span class="radio__label">Full-time</span>
+      </label>
+      <label class="radio">
+        <input type="radio" class="radio__input" name="study-mode">
+        <span class="radio__label">Part-time</span>
+      </label>
+    </div>
+  </div>
+</div>

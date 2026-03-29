@@ -1,0 +1,45 @@
+/* ================================================================
+   NEWSLETTER COMPONENT
+   ================================================================ */
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-24);
+  padding: var(--sp-64) var(--grid-gutter);
+  background-color: var(--color-bg-brand);
+  color: var(--color-text-inverted);
+  text-align: center;
+
+  &__title {
+    font-family: var(--font-serif);
+    font-size: var(--text-h2);
+    line-height: var(--lh-h2);
+    font-weight: var(--fw-regular);
+  }
+
+  &__description {
+    font-size: var(--text-body-lg);
+    line-height: var(--lh-body-lg);
+    opacity: 0.8;
+    max-width: var(--grid-6col);
+    margin: 0 auto;
+  }
+
+  &__form {
+    display: flex;
+    max-width: var(--grid-6col);
+    margin: 0 auto;
+    gap: var(--sp-8);
+
+    .input {
+      flex: 1;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__form {
+      flex-direction: column;
+    }
+  }
+}

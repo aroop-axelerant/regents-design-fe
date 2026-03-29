@@ -1,0 +1,79 @@
+/* ================================================================
+   HEADER / NAVIGATION COMPONENT
+   ================================================================ */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  padding: var(--sp-16) var(--grid-gutter);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--grid-max);
+    margin: 0 auto;
+  }
+
+  /* ── Floating pill style ── */
+  &__pill {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-16);
+    padding: var(--sp-8) var(--sp-24);
+    background-color: rgba(11, 25, 26, 0.85);
+    backdrop-filter: blur(12px);
+    border-radius: var(--radius-l);
+  }
+
+  /* ── Logo ── */
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    img, svg {
+      height: 32px;
+      width: auto;
+    }
+  }
+
+  /* ── Nav ── */
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-4);
+  }
+
+  &__nav-link {
+    font-family: var(--font-sans);
+    font-size: var(--text-nav-item);
+    font-weight: var(--fw-medium);
+    color: var(--color-text-inverted);
+    text-decoration: none;
+    padding: var(--sp-8) var(--sp-16);
+    border-radius: var(--radius-l);
+    transition: background-color var(--ease);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &--active {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+
+  /* ── Actions pill ── */
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-8);
+  }
+
+  @media (max-width: 767px) {
+    &__nav {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "foundation": [
+    {
+      "title": "Foundation",
+      "items": [
+        { "label": "Colors", "url": "/foundation/colors/" },
+        { "label": "Typography", "url": "/foundation/typography/" },
+        { "label": "Spacing & Grid", "url": "/foundation/spacing/" },
+        { "label": "Shadows & Elevation", "url": "/foundation/shadows/" }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "title": "Components",
+      "items": [
+        { "label": "Links", "url": "/components/links/" },
+        { "label": "Buttons", "url": "/components/buttons/" },
+        { "label": "Forms", "url": "/components/forms/" },
+        { "label": "Cards", "url": "/components/cards/" },
+        { "label": "Chips", "url": "/components/chips/" },
+        { "label": "Tabs", "url": "/components/tabs/" },
+        { "label": "Accordion", "url": "/components/accordion/" },
+        { "label": "Hero", "url": "/components/hero/" }
+      ]
+    }
+  ],
+  "layouts": [
+    {
+      "title": "Layouts",
+      "items": [
+        { "label": "Single Column", "url": "/layouts/single-column/" },
+        { "label": "Multiple Column", "url": "/layouts/multi-column/" }
+      ]
+    }
+  ]
+}

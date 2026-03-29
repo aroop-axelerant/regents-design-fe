@@ -1,0 +1,72 @@
+/* ================================================================
+   CONTAINER & LAYOUT WRAPPERS
+   ================================================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--grid-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--grid-gutter);
+  padding-right: var(--grid-gutter);
+}
+
+/* ── Width variants ── */
+.container--narrow {
+  max-width: var(--grid-6col);
+}
+
+.container--medium {
+  max-width: var(--grid-8col);
+}
+
+.container--wide {
+  max-width: var(--grid-10col);
+}
+
+.container--full {
+  max-width: none;
+}
+
+/* ── Section spacing ── */
+.section {
+  padding-top: var(--sp-96);
+  padding-bottom: var(--sp-96);
+
+  @media (max-width: 1279px) {
+    padding-top: var(--sp-64);
+    padding-bottom: var(--sp-64);
+  }
+
+  @media (max-width: 767px) {
+    padding-top: var(--sp-48);
+    padding-bottom: var(--sp-48);
+  }
+}
+
+/* ── Stack (vertical flex) ── */
+.stack {
+  display: flex;
+  flex-direction: column;
+
+  &--4  { gap: var(--sp-4); }
+  &--8  { gap: var(--sp-8); }
+  &--16 { gap: var(--sp-16); }
+  &--24 { gap: var(--sp-24); }
+  &--32 { gap: var(--sp-32); }
+  &--48 { gap: var(--sp-48); }
+  &--64 { gap: var(--sp-64); }
+}
+
+/* ── Cluster (horizontal flex) ── */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &--4  { gap: var(--sp-4); }
+  &--8  { gap: var(--sp-8); }
+  &--16 { gap: var(--sp-16); }
+  &--24 { gap: var(--sp-24); }
+  &--32 { gap: var(--sp-32); }
+}

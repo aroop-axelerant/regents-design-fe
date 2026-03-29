@@ -1,0 +1,406 @@
+@use 'variables' as *;
+
+/* ================================================================
+   TYPOGRAPHY — Custom Properties & Utility Classes
+   Regent's University London Design System
+   ================================================================ */
+
+:root {
+  /* ── Font Families ── */
+  --font-serif: 'Magnole', 'Playfair Display', Georgia, serif;
+  --font-sans:  'Avenir Next', 'Avenir', 'DM Sans', -apple-system,
+                BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* ── Font Weights ── */
+  --fw-regular:  #{$typography-font-weight-regular};
+  --fw-medium:   #{$typography-font-weight-medium};
+  --fw-semibold: #{$typography-font-weight-semibold};
+  --fw-bold:     #{$typography-font-weight-bold};
+
+  /* ── Font Sizes (Desktop) ── */
+  --text-display-2xl: #{$typography-font-size-display-2xl};
+  --text-display-xl:  #{$typography-font-size-display-xl};
+  --text-display-l:   #{$typography-font-size-display-l};
+  --text-display-m:   #{$typography-font-size-display-m};
+  --text-display-s:   #{$typography-font-size-display-s};
+  --text-h1:  #{$typography-font-size-h1};
+  --text-h2:  #{$typography-font-size-h2};
+  --text-h3:  #{$typography-font-size-h3};
+  --text-h4:  #{$typography-font-size-h4};
+  --text-h5:  #{$typography-font-size-h5};
+  --text-h6:  #{$typography-font-size-h6};
+  --text-body-xl:  #{$typography-font-size-body-xl};
+  --text-subtitle: #{$typography-font-size-subtitle};
+  --text-body-lg:  #{$typography-font-size-body-lg};
+  --text-body:     #{$typography-font-size-body};
+  --text-small:    #{$typography-font-size-small};
+  --text-caption:  #{$typography-font-size-caption};
+  --text-overline: #{$typography-font-size-overline};
+  --text-quote-l:  #{$typography-font-size-quote-l};
+  --text-quote-m:  #{$typography-font-size-quote-m};
+  --text-label-xl: #{$typography-font-size-label-xl};
+  --text-label-l:  #{$typography-font-size-label-l};
+  --text-label-m:  #{$typography-font-size-label-m};
+  --text-label-s:  #{$typography-font-size-label-s};
+  --text-nav-item: #{$typography-font-size-nav-item};
+  --text-badge:    #{$typography-font-size-badge};
+  --text-helper:   #{$typography-font-size-helper};
+  --text-tab-label: #{$typography-font-size-tab-label};
+  --text-tooltip:  #{$typography-font-size-tooltip};
+
+  /* ── Line Heights ── */
+  --lh-none:        #{$typography-line-height-none};
+  --lh-tightest:    #{$typography-line-height-tightest};
+  --lh-tighter:     #{$typography-line-height-tighter};
+  --lh-tight:       #{$typography-line-height-tight};
+  --lh-snug:        #{$typography-line-height-snug};
+  --lh-compact:     #{$typography-line-height-compact};
+  --lh-normal:      #{$typography-line-height-normal};
+  --lh-relaxed:     #{$typography-line-height-relaxed};
+  --lh-comfortable: #{$typography-line-height-comfortable};
+  --lh-loose:       #{$typography-line-height-loose};
+  --lh-spacious:    #{$typography-line-height-spacious};
+  --lh-airy:        #{$typography-line-height-airy};
+  --lh-open:        #{$typography-line-height-open};
+  --lh-generous:    #{$typography-line-height-generous};
+
+  /* Semantic line-height aliases */
+  --lh-display-2xl: var(--lh-none);
+  --lh-display-xl:  var(--lh-tightest);
+  --lh-display-l:   var(--lh-tighter);
+  --lh-display-m:   var(--lh-tight);
+  --lh-display-s:   var(--lh-snug);
+  --lh-h1:          var(--lh-snug);
+  --lh-h2:          var(--lh-compact);
+  --lh-h3:          var(--lh-normal);
+  --lh-h4:          var(--lh-relaxed);
+  --lh-h5:          var(--lh-comfortable);
+  --lh-h6:          var(--lh-comfortable);
+  --lh-body-xl:     var(--lh-generous);
+  --lh-subtitle:    var(--lh-generous);
+  --lh-body-lg:     var(--lh-open);
+  --lh-body:        var(--lh-airy);
+  --lh-small:       var(--lh-spacious);
+  --lh-caption:     var(--lh-comfortable);
+  --lh-quote:       var(--lh-loose);
+  --lh-ui:          1.0;
+  --lh-input:       var(--lh-comfortable);
+  --lh-helper:      var(--lh-relaxed);
+
+  /* ── Letter Spacing ── */
+  --ls-tighter: #{$typography-letter-spacing-tighter};
+  --ls-tight:   #{$typography-letter-spacing-tight};
+  --ls-snug:    #{$typography-letter-spacing-snug};
+  --ls-normal:  #{$typography-letter-spacing-normal};
+  --ls-wide:    #{$typography-letter-spacing-wide};
+  --ls-wider:   #{$typography-letter-spacing-wider};
+  --ls-widest:  #{$typography-letter-spacing-widest};
+
+  /* Semantic letter-spacing aliases */
+  --ls-display-xl: var(--ls-tighter);
+  --ls-display-l:  var(--ls-tight);
+  --ls-h1:         var(--ls-snug);
+  --ls-h2:         var(--ls-snug);
+  --ls-h3:         var(--ls-normal);
+  --ls-link:       var(--ls-normal);
+  --ls-small:      var(--ls-normal);
+  --ls-caption:    var(--ls-wide);
+  --ls-label:      var(--ls-widest);
+  --ls-btn:        var(--ls-normal);
+
+  /* ── Paragraph Spacing ── */
+  --ps-display-xl: 32px;
+  --ps-display-l:  28px;
+  --ps-h1:         24px;
+  --ps-h2:         20px;
+  --ps-h3:         18px;
+  --ps-h4:         16px;
+  --ps-subtitle:   20px;
+  --ps-body-lg:    16px;
+  --ps-body:       16px;
+  --ps-small:      12px;
+  --ps-caption:    8px;
+}
+
+/* ── DISPLAY TIER — Magnole serif, weight 400 ── */
+.text-display-2xl {
+  font-family: var(--font-serif);
+  font-size: var(--text-display-2xl);
+  line-height: var(--lh-display-2xl);
+  letter-spacing: var(--ls-tighter);
+  font-weight: var(--fw-regular);
+}
+
+.text-display-xl {
+  font-family: var(--font-serif);
+  font-size: var(--text-display-xl);
+  line-height: var(--lh-display-xl);
+  letter-spacing: var(--ls-tighter);
+  font-weight: var(--fw-regular);
+}
+
+.text-display-l {
+  font-family: var(--font-serif);
+  font-size: var(--text-display-l);
+  line-height: var(--lh-display-l);
+  letter-spacing: var(--ls-tight);
+  font-weight: var(--fw-regular);
+}
+
+.text-display-m {
+  font-family: var(--font-serif);
+  font-size: var(--text-display-m);
+  line-height: var(--lh-display-m);
+  letter-spacing: var(--ls-tight);
+  font-weight: var(--fw-regular);
+}
+
+.text-display-s {
+  font-family: var(--font-serif);
+  font-size: var(--text-display-s);
+  line-height: var(--lh-display-s);
+  letter-spacing: var(--ls-snug);
+  font-weight: var(--fw-regular);
+}
+
+/* ── HEADING TIER ── */
+.text-h1 {
+  font-family: var(--font-serif);
+  font-size: var(--text-h1);
+  line-height: var(--lh-h1);
+  letter-spacing: var(--ls-h1);
+  font-weight: var(--fw-regular);
+}
+
+.text-h2 {
+  font-family: var(--font-serif);
+  font-size: var(--text-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--ls-h2);
+  font-weight: var(--fw-regular);
+}
+
+.text-h3 {
+  font-family: var(--font-sans);
+  font-size: var(--text-h3);
+  line-height: var(--lh-h3);
+  letter-spacing: var(--ls-h3);
+  font-weight: var(--fw-medium);
+}
+
+.text-h4 {
+  font-family: var(--font-sans);
+  font-size: var(--text-h4);
+  line-height: var(--lh-h4);
+  letter-spacing: var(--ls-normal);
+  font-weight: var(--fw-medium);
+}
+
+.text-h5 {
+  font-family: var(--font-sans);
+  font-size: var(--text-h5);
+  line-height: var(--lh-h5);
+  letter-spacing: var(--ls-wide);
+  font-weight: var(--fw-medium);
+}
+
+.text-h6 {
+  font-family: var(--font-sans);
+  font-size: var(--text-h6);
+  line-height: var(--lh-h6);
+  letter-spacing: var(--ls-wider);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+}
+
+/* ── BODY TIER — Avenir Next sans, weight 400 ── */
+.text-body-xl {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-xl);
+  line-height: var(--lh-body-xl);
+  font-weight: var(--fw-regular);
+}
+
+.text-subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-subtitle);
+  line-height: var(--lh-subtitle);
+  font-weight: var(--fw-regular);
+  color: var(--color-text-secondary);
+}
+
+.text-body-lg {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-lg);
+  line-height: var(--lh-body-lg);
+  font-weight: var(--fw-regular);
+}
+
+.text-body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+  font-weight: var(--fw-regular);
+}
+
+.text-small {
+  font-family: var(--font-sans);
+  font-size: var(--text-small);
+  line-height: var(--lh-small);
+  letter-spacing: var(--ls-normal);
+  font-weight: var(--fw-regular);
+}
+
+.text-caption {
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  line-height: var(--lh-caption);
+  letter-spacing: var(--ls-wide);
+  font-weight: var(--fw-regular);
+}
+
+/* ── QUOTE TIER — Magnole serif italic ── */
+.text-quote-l {
+  font-family: var(--font-serif);
+  font-size: var(--text-quote-l);
+  line-height: var(--lh-quote);
+  letter-spacing: var(--ls-snug);
+  font-weight: var(--fw-regular);
+  font-style: italic;
+}
+
+.text-quote-m {
+  font-family: var(--font-serif);
+  font-size: var(--text-quote-m);
+  line-height: var(--lh-quote);
+  letter-spacing: var(--ls-snug);
+  font-weight: var(--fw-regular);
+  font-style: italic;
+}
+
+/* ── UI / FUNCTIONAL TIER ── */
+.text-overline {
+  font-family: var(--font-sans);
+  font-size: var(--text-overline);
+  line-height: var(--lh-ui);
+  letter-spacing: var(--ls-widest);
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+}
+
+.text-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-overline);
+  line-height: var(--lh-comfortable);
+  letter-spacing: var(--ls-widest);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+.text-label-l {
+  font-family: var(--font-sans);
+  font-size: var(--text-label-l);
+  line-height: var(--lh-ui);
+  letter-spacing: var(--ls-normal);
+  font-weight: var(--fw-medium);
+}
+
+.text-label-m {
+  font-family: var(--font-sans);
+  font-size: var(--text-label-m);
+  line-height: var(--lh-ui);
+  letter-spacing: var(--ls-normal);
+  font-weight: var(--fw-medium);
+}
+
+.text-label-s {
+  font-family: var(--font-sans);
+  font-size: var(--text-label-s);
+  line-height: var(--lh-ui);
+  letter-spacing: var(--ls-wide);
+  font-weight: var(--fw-medium);
+}
+
+.text-link {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--lh-body);
+  letter-spacing: var(--ls-normal);
+  font-weight: var(--fw-semibold);
+}
+
+/* ── Editorial utilities ── */
+.text-serif    { font-family: var(--font-serif); }
+.text-italic   { font-style: italic; }
+.text-regular  { font-weight: var(--fw-regular); }
+.text-medium   { font-weight: var(--fw-medium); }
+.text-semibold { font-weight: var(--fw-semibold); }
+.text-bold     { font-weight: var(--fw-bold); }
+
+/* ── Responsive Typography Overrides ── */
+@media (max-width: 1279px) {
+  :root {
+    --text-display-2xl: 64px;
+    --text-display-xl:  56px;
+    --text-display-l:   48px;
+    --text-display-m:   36px;
+    --text-display-s:   28px;
+    --text-h1:          32px;
+    --text-h2:          24px;
+    --text-h3:          20px;
+    --text-h4:          18px;
+    --text-h5:          16px;
+    --text-h6:          13px;
+    --text-body-xl:     18px;
+    --text-subtitle:    18px;
+    --text-body-lg:     17px;
+    --text-quote-l:     22px;
+    --text-quote-m:     18px;
+    --text-label-xl:    16px;
+    --text-nav-item:    14px;
+    --ps-display-xl:    28px;
+    --ps-display-l:     24px;
+    --ps-h1:            22px;
+    --ps-h2:            18px;
+    --ps-h3:            16px;
+    --ps-h4:            14px;
+    --ps-subtitle:      18px;
+    --ps-body:          14px;
+    --ps-small:         10px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --text-display-2xl: 48px;
+    --text-display-xl:  40px;
+    --text-display-l:   36px;
+    --text-display-m:   28px;
+    --text-display-s:   24px;
+    --text-h1:          28px;
+    --text-h2:          22px;
+    --text-h3:          18px;
+    --text-h4:          16px;
+    --text-h5:          14px;
+    --text-h6:          12px;
+    --text-body-xl:     18px;
+    --text-subtitle:    18px;
+    --text-body-lg:     16px;
+    --text-body:        15px;
+    --text-small:       13px;
+    --text-quote-l:     20px;
+    --text-quote-m:     17px;
+    --text-label-xl:    16px;
+    --text-nav-item:    14px;
+    --ps-display-xl:    24px;
+    --ps-display-l:     20px;
+    --ps-h1:            20px;
+    --ps-h2:            16px;
+    --ps-h3:            16px;
+    --ps-h4:            14px;
+    --ps-subtitle:      16px;
+    --ps-body-lg:       14px;
+    --ps-body:          14px;
+    --ps-small:         10px;
+  }
+}
