@@ -1,0 +1,62 @@
+---
+layout: docs.njk
+title: Footer
+description: Dark multi-column footer with link groups, bottom bar, and responsive stacking.
+section: Components
+sidebar: navigation.components
+permalink: /components/footer.html
+---
+
+<div class="docs-section">
+  <h2 class="docs-section__title">Default Footer</h2>
+  <p class="docs-section__description">Use as the site-wide page footer on all public-facing templates. The 4-column layout suits sites with multiple link categories; if fewer than three columns are needed, collapse unused columns rather than leaving them empty. The dark surface creates a clear visual endpoint for the page and ensures the footer never competes with body content above it.</p>
+  <div class="ds-preview ds-preview--dark" style="padding: 0; overflow: hidden;">
+    <footer class="footer" style="padding-top: var(--sp-48); padding-bottom: var(--sp-48);">
+      <div class="footer__inner">
+        <div class="footer__column">
+          <h4 class="footer__heading">Design System</h4>
+          <a href="#" class="footer__link">Foundation</a>
+          <a href="#" class="footer__link">Components</a>
+          <a href="#" class="footer__link">Layouts</a>
+          <a href="#" class="footer__link">Templates</a>
+        </div>
+        <div class="footer__column">
+          <h4 class="footer__heading">Foundation</h4>
+          <a href="#" class="footer__link">Colors</a>
+          <a href="#" class="footer__link">Typography</a>
+          <a href="#" class="footer__link">Spacing &amp; Grid</a>
+          <a href="#" class="footer__link">Shadows</a>
+        </div>
+        <div class="footer__column">
+          <h4 class="footer__heading">Components</h4>
+          <a href="#" class="footer__link">Buttons</a>
+          <a href="#" class="footer__link">Cards</a>
+          <a href="#" class="footer__link">Forms</a>
+          <a href="#" class="footer__link">Tabs</a>
+        </div>
+        <div class="footer__column">
+          <h4 class="footer__heading">Resources</h4>
+          <a href="#" class="footer__link">GitHub</a>
+          <a href="#" class="footer__link">Figma</a>
+          <a href="#" class="footer__link">Changelog</a>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2025 Regent's University London. Design System.</p>
+          <p>Built with care.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<div class="docs-section">
+  <h2 class="docs-section__title">Tokens</h2>
+  <div class="stack stack--8">
+    <div class="cluster cluster--16"><span class="chip chip--charcoal">background</span> <span class="text-body">--color-bg-dark</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline">padding</span> <span class="text-body">--sp-64 vertical · --grid-gutter horizontal</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline">grid</span> <span class="text-body">4 columns at desktop · 2 at ≤767px · 1 at ≤480px</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline">gap</span> <span class="text-body">--grid-gap</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline">bottom border</span> <span class="text-body">rgba(255,255,255, 0.15) · --border-xs</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline">link colour</span> <span class="text-body">rgba(255,255,255, 0.7) → white on hover</span></div>
+  </div>
+</div>

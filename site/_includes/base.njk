@@ -4,16 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title | default("Regent's Design System") }}</title>
-  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/dist/css/main.css">
   {% block head %}{% endblock %}
 </head>
 <body class="{{ bodyClass | default('') }}">
   {% block body %}
-    {% include "header.njk" %}
     {% block content %}{% endblock %}
-    {% include "footer.njk" %}
   {% endblock %}
-  <script type="module" src="/scripts/main.js"></script>
+  <script type="module" src="/dist/js/main.js"></script>
   {% block scripts %}{% endblock %}
 </body>
 </html>

@@ -22,4 +22,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize Dropdowns
   document.querySelectorAll('.dropdown').forEach((el) => new Dropdown(el));
+
+  // ── Mobile navigation ──────────────────────────
+  const hamburger = document.getElementById('docs-hamburger');
+  const mobileMenu = document.getElementById('docs-mobile-menu');
+  const closeBtn = document.getElementById('docs-mobile-close');
+
+  if (hamburger && mobileMenu && closeBtn) {
+    const openMenu = () => {
+      mobileMenu.classList.add('docs__mobile-menu--open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    };
+
+    const closeMenu = () => {
+      mobileMenu.classList.remove('docs__mobile-menu--open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      hamburger.focus();
+    };
+
+    hamburger.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('docs__mobile-menu--open')) {
+        closeMenu();
+      }
+    });
+
+    // Close when a nav link is tapped (navigating away)
+    mobileMenu.querySelectorAll('.docs__nav-link').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+  }
 });

@@ -3,10 +3,10 @@
     {
       "title": "Foundation",
       "items": [
-        { "label": "Colors", "url": "/foundation/colors/" },
-        { "label": "Typography", "url": "/foundation/typography/" },
-        { "label": "Spacing & Grid", "url": "/foundation/spacing/" },
-        { "label": "Shadows & Elevation", "url": "/foundation/shadows/" }
+        { "label": "Colors",            "url": "/foundation/colors.html" },
+        { "label": "Typography",        "url": "/foundation/typography.html" },
+        { "label": "Spacing & Grid",    "url": "/foundation/spacing.html" },
+        { "label": "Shadows & Elevation", "url": "/foundation/shadows.html" }
       ]
     }
   ],
@@ -14,14 +14,16 @@
     {
       "title": "Components",
       "items": [
-        { "label": "Links", "url": "/components/links/" },
-        { "label": "Buttons", "url": "/components/buttons/" },
-        { "label": "Forms", "url": "/components/forms/" },
-        { "label": "Cards", "url": "/components/cards/" },
-        { "label": "Chips", "url": "/components/chips/" },
-        { "label": "Tabs", "url": "/components/tabs/" },
-        { "label": "Accordion", "url": "/components/accordion/" },
-        { "label": "Hero", "url": "/components/hero/" }
+        { "label": "Links",      "url": "/components/links.html" },
+        { "label": "Buttons",    "url": "/components/buttons.html" },
+        { "label": "Forms",      "url": "/components/forms.html" },
+        { "label": "Cards",      "url": "/components/cards.html" },
+        { "label": "Chips",      "url": "/components/chips.html" },
+        { "label": "Tabs",       "url": "/components/tabs.html" },
+        { "label": "Accordion",  "url": "/components/accordion.html" },
+        { "label": "Hero",       "url": "/components/hero.html" },
+        { "label": "Header",     "url": "/components/header.html" },
+        { "label": "Footer",     "url": "/components/footer.html" }
       ]
     }
   ],
@@ -29,8 +31,8 @@
     {
       "title": "Layouts",
       "items": [
-        { "label": "Single Column", "url": "/layouts/single-column/" },
-        { "label": "Multiple Column", "url": "/layouts/multi-column/" }
+        { "label": "Single Column",   "url": "/layouts/single-column.html" },
+        { "label": "Multiple Column", "url": "/layouts/multi-column.html" }
       ]
     }
   ]

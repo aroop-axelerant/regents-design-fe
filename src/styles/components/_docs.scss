@@ -6,7 +6,7 @@
   display: flex;
   min-height: 100vh;
 
-  /* ── Sidebar ── */
+  /* ── Sidebar ─────────────────────────────────── */
   &__sidebar {
     position: sticky;
     top: 0;
@@ -14,12 +14,61 @@
     height: 100vh;
     overflow-y: auto;
     background-color: var(--color-bg-dark);
-    padding: var(--sp-32) var(--sp-24);
+    padding: var(--sp-24) var(--sp-24) var(--sp-32);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+
+    /* Thin scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,.12) transparent;
+
+    &::-webkit-scrollbar       { width: 4px; }
+    &::-webkit-scrollbar-track { background: transparent; }
+    &::-webkit-scrollbar-thumb { background: rgba(255,255,255,.15); border-radius: 4px; }
+  }
+
+  /* ── Sidebar brand ───────────────────────────── */
+  &__brand {
+    padding-bottom: var(--sp-16);
+    margin-bottom: var(--sp-24);
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
     flex-shrink: 0;
   }
 
+  &__brand-link {
+    display: block;
+    text-decoration: none;
+    opacity: .9;
+    transition: opacity var(--ease);
+
+    &:hover { opacity: 1; }
+
+    img { display: block; }
+  }
+
+  &__brand-label {
+    display: block;
+    margin-top: var(--sp-8);
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: var(--fw-bold);
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--color-charcoal-50, #858d8d);
+  }
+
+  /* ── Nav groups ──────────────────────────────── */
+  &__nav { flex: 1; }
+
   &__nav-group {
     margin-bottom: var(--sp-32);
+
+    /* Visual separator between groups */
+    & + & {
+      padding-top: var(--sp-24);
+      border-top: 1px solid rgba(255, 255, 255, .06);
+    }
   }
 
   &__nav-heading {
@@ -28,32 +77,38 @@
     font-weight: var(--fw-bold);
     letter-spacing: var(--ls-widest);
     text-transform: uppercase;
-    color: var(--color-charcoal-40);
+    color: rgba(255, 255, 255, .35);
     margin-bottom: var(--sp-8);
+    padding: 0 var(--sp-16);
   }
 
   &__nav-link {
     display: block;
     font-size: var(--text-small);
-    color: var(--color-charcoal-30);
+    color: rgba(255, 255, 255, .55);
     text-decoration: none;
-    padding: var(--sp-4) var(--sp-16);
+    padding: var(--sp-8) var(--sp-16);
     border-left: 2px solid transparent;
-    transition: color var(--ease), border-color var(--ease);
+    border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+    transition: color var(--ease), border-color var(--ease), background var(--ease);
 
     &:hover {
-      color: var(--color-text-inverted);
+      color: rgba(255, 255, 255, .9);
+      background: rgba(255,255,255,.05);
     }
 
     &--active {
       color: var(--color-bg-accent);
       border-left-color: var(--color-bg-accent);
+      background: rgba(255,255,255,.06);
+      font-weight: var(--fw-medium);
     }
   }
 
-  /* ── Main Content ── */
+  /* ── Main content ────────────────────────────── */
   &__main {
     flex: 1;
+    min-width: 0;
     max-width: 1040px;
     margin: 0 auto;
     padding: var(--sp-64) var(--sp-48);
@@ -61,6 +116,8 @@
 
   &__header {
     margin-bottom: var(--sp-48);
+    padding-bottom: var(--sp-32);
+    border-bottom: 1px solid var(--color-border);
     display: flex;
     flex-direction: column;
     gap: var(--sp-8);
@@ -72,28 +129,139 @@
     gap: var(--sp-64);
   }
 
+  /* ── Tablet ──────────────────────────────────── */
   @media (max-width: 1279px) {
-    &__sidebar {
-      width: 220px;
-    }
+    &__sidebar { width: 220px; }
+    &__main    { padding: var(--sp-48) var(--sp-32); }
   }
 
+  /* ── Mobile — sidebar hidden, hamburger takes over ── */
   @media (max-width: 767px) {
-    flex-direction: column;
-
-    &__sidebar {
-      position: relative;
-      width: 100%;
-      height: auto;
-    }
-
-    &__main {
-      padding: var(--sp-32) var(--sp-16);
-    }
+    &__sidebar { display: none; }
+    &__main    { padding: var(--sp-32) var(--sp-16); }
   }
 }
 
-/* ── Preview Canvas ── */
+/* ================================================================
+   MOBILE HAMBURGER BUTTON  (fixed · bottom-right)
+   ================================================================ */
+
+.docs__hamburger {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 400;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-forest-green, #005b4b);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(11, 25, 26, .45);
+  transition: background var(--ease), transform var(--ease), box-shadow var(--ease);
+
+  &:hover {
+    background: var(--color-extra-primary-hover, #004a3c);
+    transform: scale(1.06);
+    box-shadow: 0 6px 24px rgba(11, 25, 26, .55);
+  }
+
+  &:active { transform: scale(.97); }
+
+  svg { display: block; flex-shrink: 0; }
+
+  @media (max-width: 767px) { display: flex; }
+}
+
+/* ================================================================
+   MOBILE FULL-SCREEN OVERLAY MENU
+   ================================================================ */
+
+.docs__mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: var(--color-bg-dark);
+  overflow-y: auto;
+  padding: var(--sp-24);
+
+  /* Hidden state */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity .22s ease, transform .22s ease;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,.12) transparent;
+
+  &::-webkit-scrollbar       { width: 4px; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb { background: rgba(255,255,255,.15); border-radius: 4px; }
+
+  /* Open state — toggled by JS */
+  &--open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
+
+.docs__mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-32);
+  padding-bottom: var(--sp-24);
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.docs__mobile-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, .2);
+  background: transparent;
+  color: var(--color-charcoal-20, #ced1d1);
+  cursor: pointer;
+  transition: background var(--ease), color var(--ease), border-color var(--ease);
+
+  &:hover {
+    background: rgba(255, 255, 255, .1);
+    color: #fff;
+    border-color: rgba(255, 255, 255, .4);
+  }
+
+  svg { display: block; }
+}
+
+/* Mobile nav reuses sidebar nav tokens at slightly larger size */
+.docs__mobile-nav {
+  .docs__nav-group {
+    margin-bottom: var(--sp-32);
+
+    & + .docs__nav-group {
+      padding-top: var(--sp-24);
+      border-top: 1px solid rgba(255, 255, 255, .06);
+    }
+  }
+
+  .docs__nav-link {
+    font-size: var(--text-body);
+    padding: var(--sp-8) var(--sp-16);
+  }
+}
+
+/* ================================================================
+   DS PREVIEW CANVAS
+   ================================================================ */
+
 .ds-preview {
   border: var(--border-xs) solid var(--color-border);
   border-radius: var(--radius-s);
@@ -120,7 +288,10 @@
   }
 }
 
-/* ── Section within docs ── */
+/* ================================================================
+   DOCS SECTION
+   ================================================================ */
+
 .docs-section {
   &__title {
     font-family: var(--font-sans);
@@ -136,7 +307,10 @@
   }
 }
 
-/* ── Color Swatch Grid ── */
+/* ================================================================
+   COLOR SWATCHES
+   ================================================================ */
+
 .swatch-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -171,7 +345,10 @@
   }
 }
 
-/* ── Spacing bar demos ── */
+/* ================================================================
+   SPACING BAR DEMOS
+   ================================================================ */
+
 .spacing-bar {
   display: flex;
   align-items: center;

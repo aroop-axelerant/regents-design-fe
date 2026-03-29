@@ -131,6 +131,20 @@
     min-height: 400px;
     padding: var(--sp-64) var(--grid-gutter);
 
+    &__search {
+      flex-direction: column;
+      max-width: 100%;
+
+      .input {
+        border-radius: var(--radius-l);
+        border-right: var(--border-xs) solid var(--color-border);
+      }
+
+      .btn {
+        border-radius: var(--radius-l);
+      }
+    }
+
     &--split {
       grid-template-columns: 1fr;
 

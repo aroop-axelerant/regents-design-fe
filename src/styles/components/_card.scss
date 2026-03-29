@@ -98,6 +98,24 @@
     .card__description { color: rgba(255, 255, 255, 0.7); }
   }
 
+  /* ── Mobile ── */
+  @media (max-width: 767px) {
+    &__body {
+      padding: var(--sp-16);
+    }
+
+    &__actions {
+      flex-direction: column;
+      padding: 0 var(--sp-16) var(--sp-16);
+
+      .btn { width: 100%; justify-content: center; }
+    }
+
+    &--feature {
+      padding: var(--sp-24);
+    }
+  }
+
   /* ── Icon wrapper in feature cards ── */
   &__icon {
     display: flex;

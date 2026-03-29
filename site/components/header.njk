@@ -1,0 +1,65 @@
+---
+layout: docs.njk
+title: Header
+description: Sticky floating-pill navigation header with logo, nav links, and optional actions.
+section: Components
+sidebar: navigation.components
+permalink: /components/header.html
+---
+
+<div class="docs-section">
+  <h2 class="docs-section__title">Default Header</h2>
+  <p class="docs-section__description">The standard header for all public-facing pages. Its sticky position keeps navigation accessible as users scroll, and the glass-blur pill floats above page content without hard-blocking any layout. Use this variant whenever the page has a light or image background directly beneath the nav.</p>
+  <div class="ds-preview ds-preview--warm" style="padding: 0; overflow: hidden; min-height: 80px;">
+    <header class="header" style="position: relative; top: auto;">
+      <div class="header__inner">
+        <div class="header__pill">
+          <a href="#" class="header__logo" aria-label="Regent's University London">
+            <img src="/public/full-logo.svg" alt="Regent's University London" width="142" height="29">
+          </a>
+          <nav class="header__nav" aria-label="Main navigation">
+            <a href="#" class="header__nav-link">Foundation</a>
+            <a href="#" class="header__nav-link header__nav-link--active">Components</a>
+            <a href="#" class="header__nav-link">Layouts</a>
+            <a href="#" class="header__nav-link">Templates</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>
+
+<div class="docs-section">
+  <h2 class="docs-section__title">With CTA Actions</h2>
+  <p class="docs-section__description">Add a <code>.header__actions</code> slot when a persistent CTA — Apply Now, Log In — must remain visible at all times regardless of scroll position. Keep to a single button to avoid overloading the pill. Prefer the Small size to maintain the compact feel of the header.</p>
+  <div class="ds-preview ds-preview--warm" style="padding: 0; overflow: hidden; min-height: 80px;">
+    <header class="header" style="position: relative; top: auto;">
+      <div class="header__inner">
+        <div class="header__pill">
+          <a href="#" class="header__logo" aria-label="Regent's University London">
+            <img src="/public/full-logo.svg" alt="Regent's University London" width="142" height="29">
+          </a>
+          <nav class="header__nav" aria-label="Main navigation">
+            <a href="#" class="header__nav-link">About</a>
+            <a href="#" class="header__nav-link">Courses</a>
+            <a href="#" class="header__nav-link">Research</a>
+          </nav>
+          <div class="header__actions">
+            <a href="#" class="btn btn--primary-inverted btn--sm">Apply Now</a>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>
+
+<div class="docs-section">
+  <h2 class="docs-section__title">Tokens</h2>
+  <div class="stack stack--8">
+    <div class="cluster cluster--16"><span class="chip chip--outline">position</span> <span class="text-body">sticky · top 0 · z-index --z-sticky</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline">pill background</span> <span class="text-body">rgba(11,25,26, 0.85) + backdrop-filter blur(12px)</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline">border-radius</span> <span class="text-body">--radius-l (pill)</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline">padding</span> <span class="text-body">--sp-16 vertical · --sp-24 horizontal</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline">mobile</span> <span class="text-body">Nav links hidden below 768px</span></div>
+  </div>
+</div>

@@ -75,4 +75,20 @@
       padding: 0 var(--sp-24);
     }
   }
+
+  /* ── Mobile ── */
+  @media (max-width: 767px) {
+    &__trigger {
+      font-size: var(--text-body-lg);
+      padding: var(--sp-16) 0;
+    }
+
+    &__body {
+      padding-bottom: var(--sp-16);
+    }
+
+    &--filled .accordion__item {
+      padding: 0 var(--sp-16);
+    }
+  }
 }

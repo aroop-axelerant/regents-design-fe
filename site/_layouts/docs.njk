@@ -2,23 +2,33 @@
 
 {% block content %}
 <div class="docs">
-  <aside class="docs__sidebar" aria-label="Section navigation">
-    <nav class="docs__nav">
-      {% if sidebar %}
-        {% for group in sidebar %}
-          <div class="docs__nav-group">
-            <h3 class="docs__nav-heading">{{ group.title }}</h3>
-            {% for item in group.items %}
-              <a href="{{ item.url }}" class="docs__nav-link {% if item.url == page.url %}docs__nav-link--active{% endif %}">
-                {{ item.label }}
-              </a>
-            {% endfor %}
-          </div>
-        {% endfor %}
-      {% endif %}
+
+  {# ── Desktop sidebar ──────────────────────────── #}
+  <aside class="docs__sidebar" aria-label="Design system navigation" id="docs-sidebar">
+    <div class="docs__brand">
+      <a href="/" class="docs__brand-link" aria-label="Regent's Design System home">
+        <img src="/public/full-logo.svg" alt="Regent's University London" width="130" height="27">
+      </a>
+      <span class="docs__brand-label">Design System</span>
+    </div>
+    <nav class="docs__nav" aria-label="Section navigation">
+      {% for group in fullNav %}
+        <div class="docs__nav-group">
+          <h3 class="docs__nav-heading">{{ group.title }}</h3>
+          {% for item in group.items %}
+            <a href="{{ item.url }}"
+               class="docs__nav-link{% if item.url == page.url %} docs__nav-link--active{% endif %}">
+              {{ item.label }}
+            </a>
+          {% endfor %}
+        </div>
+      {% endfor %}
     </nav>
   </aside>
-  <main class="docs__main">
+
+  {# ── Main content ─────────────────────────────── #}
+  <main class="docs__main" id="docs-main">
+    {% if title %}
     <div class="docs__header">
       <span class="text-overline color-brand">{{ section | default("Design System") }}</span>
       <h1 class="text-display-s">{{ title }}</h1>
@@ -26,9 +36,61 @@
         <p class="text-body-lg color-muted">{{ description }}</p>
       {% endif %}
     </div>
+    {% endif %}
     <div class="docs__content">
       {{ content | safe }}
     </div>
   </main>
+
+</div>
+
+{# ── Mobile: floating hamburger ───────────────── #}
+<button class="docs__hamburger"
+        id="docs-hamburger"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="docs-mobile-menu">
+  <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true">
+    <rect y="0"  width="22" height="2" rx="1" fill="currentColor"/>
+    <rect y="7"  width="22" height="2" rx="1" fill="currentColor"/>
+    <rect y="14" width="22" height="2" rx="1" fill="currentColor"/>
+  </svg>
+</button>
+
+{# ── Mobile: full-screen overlay menu ────────── #}
+<div class="docs__mobile-menu"
+     id="docs-mobile-menu"
+     role="dialog"
+     aria-modal="true"
+     aria-label="Navigation"
+     aria-hidden="true">
+
+  <div class="docs__mobile-menu-header">
+    <a href="/" class="docs__brand-link" aria-label="Regent's Design System home">
+      <img src="/public/full-logo.svg" alt="Regent's University London" width="130" height="27">
+    </a>
+    <button class="docs__mobile-close"
+            id="docs-mobile-close"
+            aria-label="Close navigation">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <path d="M2 2L16 16M16 2L2 16"
+              stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <nav class="docs__mobile-nav" aria-label="Mobile section navigation">
+    {% for group in fullNav %}
+      <div class="docs__nav-group">
+        <h3 class="docs__nav-heading">{{ group.title }}</h3>
+        {% for item in group.items %}
+          <a href="{{ item.url }}"
+             class="docs__nav-link{% if item.url == page.url %} docs__nav-link--active{% endif %}">
+            {{ item.label }}
+          </a>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </nav>
 </div>
 {% endblock %}

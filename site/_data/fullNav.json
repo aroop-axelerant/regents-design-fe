@@ -1,0 +1,52 @@
+[
+  {
+    "title": "Overview",
+    "items": [
+      { "label": "Design System", "url": "/" }
+    ]
+  },
+  {
+    "title": "Foundation",
+    "items": [
+      { "label": "Color Palettes",      "url": "/foundation/colors.html" },
+      { "label": "Typography",           "url": "/foundation/typography.html" },
+      { "label": "Grid & Spacing",       "url": "/foundation/spacing.html" },
+      { "label": "Elevation & Shadows",  "url": "/foundation/shadows.html" }
+    ]
+  },
+  {
+    "title": "Components",
+    "items": [
+      { "label": "Links",           "url": "/components/links.html" },
+      { "label": "Buttons & CTAs",  "url": "/components/buttons.html" },
+      { "label": "Form Elements",   "url": "/components/forms.html" },
+      { "label": "Cards",           "url": "/components/cards.html" },
+      { "label": "Chips / Tags",    "url": "/components/chips.html" },
+      { "label": "Horizontal Tabs", "url": "/components/tabs.html" },
+      { "label": "Accordion",       "url": "/components/accordion.html" },
+      { "label": "Hero",            "url": "/components/hero.html" },
+      { "label": "Header",          "url": "/components/header.html" },
+      { "label": "Footer",          "url": "/components/footer.html" }
+    ]
+  },
+  {
+    "title": "Layouts",
+    "items": [
+      { "label": "Single Column",   "url": "/layouts/single-column.html" },
+      { "label": "Multiple Column", "url": "/layouts/multi-column.html" }
+    ]
+  },
+  {
+    "title": "Templates",
+    "items": [
+      { "label": "Blog Post",    "url": "/templates/blog.html" },
+      { "label": "Landing Page", "url": "/templates/landing.html" }
+    ]
+  },
+  {
+    "title": "Pages",
+    "items": [
+      { "label": "About", "url": "/about.html" }
+    ]
+  }
+]

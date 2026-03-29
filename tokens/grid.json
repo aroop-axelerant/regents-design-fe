@@ -40,21 +40,21 @@
       "col": { "$value": "361px" }
     },
     "wide": {
-      "gutter": { "$value": "208px" },
+      "gutter": { "$value": "80px" },
       "max": { "$value": "1920px" },
       "gap": { "$value": "32px" },
-      "col-1": { "$value": "96px" },
-      "col-2": { "$value": "224px" },
-      "col-3": { "$value": "352px" },
-      "col-4": { "$value": "480px" },
-      "col-5": { "$value": "608px" },
-      "col-6": { "$value": "736px" },
-      "col-7": { "$value": "864px" },
-      "col-8": { "$value": "992px" },
-      "col-9": { "$value": "1120px" },
-      "col-10": { "$value": "1248px" },
-      "col-11": { "$value": "1376px" },
-      "col-12": { "$value": "1504px" }
+      "col-1": { "$value": "117px" },
+      "col-2": { "$value": "266px" },
+      "col-3": { "$value": "415px" },
+      "col-4": { "$value": "564px" },
+      "col-5": { "$value": "713px" },
+      "col-6": { "$value": "862px" },
+      "col-7": { "$value": "1011px" },
+      "col-8": { "$value": "1160px" },
+      "col-9": { "$value": "1309px" },
+      "col-10": { "$value": "1458px" },
+      "col-11": { "$value": "1607px" },
+      "col-12": { "$value": "1756px" }
     }
   }
 }

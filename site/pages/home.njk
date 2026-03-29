@@ -1,53 +1,422 @@
 ---
-layout: default.njk
-title: "Regent's Design System"
-section: home
+layout: docs.njk
+title: "Design System Overview"
+section: "Overview"
+description: "All design tokens, components, layouts, templates and pages in one place. Click any preview to open the full documentation."
 permalink: /
 ---
 
-<section class="hero hero--dark" style="min-height: 520px;">
-  <div class="hero__bg">
-    <div style="background: var(--gradient-editorial); width: 100%; height: 100%;"></div>
-  </div>
-  <div class="hero__content" style="max-width: var(--grid-8col); margin: 0 auto; text-align: center;">
-    <span class="hero__eyebrow">Design System</span>
-    <h1 class="hero__title">Regent's University London</h1>
-    <p class="hero__subtitle">A comprehensive design system built with SCSS, Nunjucks, Eleventy, and Style Dictionary.</p>
-    <div class="hero__actions" style="justify-content: center;">
-      <a href="/foundation/" class="btn btn--primary-inverted">Explore Foundation</a>
-      <a href="/components/" class="btn btn--secondary-inverted">View Components</a>
-    </div>
-  </div>
-</section>
+<style>
+  /* ── Preview page ─────────────────────────────── */
+  .pv-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 48px;
+  }
+  .pv-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-charcoal, #0b191a);
+  }
+  .pv-stat--foundation { background: var(--color-zingy-yellow, #e0f94c); }
+  .pv-stat--components { background: var(--color-violet, #deccf3); }
+  .pv-stat--layouts    { background: var(--color-soft-peach, #ffb38f); }
+  .pv-stat--templates  { background: var(--color-powdered-blue-50, #abd6f5); }
+  .pv-stat--pages      { background: var(--color-charcoal-10, #e7e8e8); }
+  .pv-stat__num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    background: rgba(11,25,26,.12);
+    border-radius: 50%;
+    font-size: 11px;
+  }
 
-<section class="section">
-  <div class="container">
-    <div class="stack stack--16 text-center mb-48">
-      <h2 class="text-h1">Five Layers</h2>
-      <p class="text-subtitle" style="max-width: var(--grid-6col); margin: 0 auto;">Organised from atomic tokens to fully assembled pages.</p>
-    </div>
-    <div class="grid grid--3">
-      <a href="/foundation/" class="card card--feature card--feature-yellow" style="text-decoration: none;">
-        <div class="card__body">
-          <span class="text-overline">Layer 1</span>
-          <h3 class="card__title">Foundation</h3>
-          <p class="card__description">Design tokens — colors, spacing, typography, radius.</p>
-        </div>
-      </a>
-      <a href="/components/" class="card card--feature card--feature-violet" style="text-decoration: none;">
-        <div class="card__body">
-          <span class="text-overline">Layer 2</span>
-          <h3 class="card__title">Components</h3>
-          <p class="card__description">Buttons, cards, forms, tabs, accordions, heroes.</p>
-        </div>
-      </a>
-      <a href="/layouts/" class="card card--feature card--feature-peach" style="text-decoration: none;">
-        <div class="card__body">
-          <span class="text-overline">Layer 3</span>
-          <h3 class="card__title">Layouts</h3>
-          <p class="card__description">Grid system, containers, structural spacing.</p>
-        </div>
-      </a>
-    </div>
+  .pv-section { margin-bottom: 64px; }
+
+  .pv-section__head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--color-charcoal-20, #ced1d1);
+  }
+  .pv-section__badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+  .pv-section__badge--foundation { background: var(--color-zingy-yellow, #e0f94c); color: var(--color-charcoal, #0b191a); }
+  .pv-section__badge--components { background: var(--color-violet, #deccf3);       color: var(--color-charcoal, #0b191a); }
+  .pv-section__badge--layouts    { background: var(--color-soft-peach, #ffb38f);   color: var(--color-charcoal, #0b191a); }
+  .pv-section__badge--templates  { background: var(--color-powdered-blue-50, #abd6f5); color: var(--color-charcoal, #0b191a); }
+  .pv-section__badge--pages      { background: var(--color-charcoal-10, #e7e8e8);  color: var(--color-charcoal, #0b191a); }
+
+  .pv-section__title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-charcoal, #0b191a);
+    margin: 0;
+    letter-spacing: -.01em;
+  }
+  .pv-section__desc {
+    font-size: 13px;
+    color: var(--color-charcoal-50, #858d8d);
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .pv-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .pv-grid--wide {
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  }
+
+  .pv-card {
+    display: block;
+    border-radius: 10px;
+    border: 1px solid var(--color-charcoal-20, #ced1d1);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    transition: box-shadow .18s ease, transform .18s ease, border-color .18s ease;
+  }
+  .pv-card:hover {
+    box-shadow: 0 8px 28px rgba(11,25,26,.12);
+    transform: translateY(-3px);
+    border-color: var(--color-charcoal-40, #9da3a3);
+  }
+
+  .pv-card__viewport {
+    position: relative;
+    width: 100%;
+    /* 16:9-ish aspect ratio container */
+    padding-top: 62%;
+    overflow: hidden;
+    background: var(--color-off-white, #f9f2e8);
+  }
+  .pv-card__viewport iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 900px;
+    border: none;
+    /* scale = card-width / 1280. At 260px card the scale ≈ 0.203 */
+    transform: scale(0.203);
+    transform-origin: top left;
+    pointer-events: none;
+  }
+  /* Thin overlay so the iframe doesn't capture pointer events */
+  .pv-card__viewport::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+  .pv-card__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 16px;
+    border-top: 1px solid var(--color-charcoal-20, #ced1d1);
+    background: #fff;
+  }
+  .pv-card__name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-charcoal, #0b191a);
+    letter-spacing: -.01em;
+  }
+  .pv-card__arrow {
+    font-size: 14px;
+    color: var(--color-charcoal-50, #858d8d);
+    transition: transform .18s ease;
+  }
+  .pv-card:hover .pv-card__arrow { transform: translateX(4px); }
+</style>
+
+{# ── Summary stats ────────────────────────────── #}
+<div class="pv-stats">
+  <span class="pv-stat pv-stat--foundation">
+    Foundation <span class="pv-stat__num">4</span>
+  </span>
+  <span class="pv-stat pv-stat--components">
+    Components <span class="pv-stat__num">10</span>
+  </span>
+  <span class="pv-stat pv-stat--layouts">
+    Layouts <span class="pv-stat__num">2</span>
+  </span>
+  <span class="pv-stat pv-stat--templates">
+    Templates <span class="pv-stat__num">2</span>
+  </span>
+  <span class="pv-stat pv-stat--pages">
+    Pages <span class="pv-stat__num">1</span>
+  </span>
+</div>
+
+{# ── Foundation ───────────────────────────────── #}
+<div class="pv-section">
+  <div class="pv-section__head">
+    <span class="pv-section__badge pv-section__badge--foundation">Foundation</span>
+    <h2 class="pv-section__title">Design Tokens &amp; Primitives</h2>
+    <span class="pv-section__desc">Colors · Typography · Spacing · Shadows</span>
   </div>
-</section>
+  <div class="pv-grid">
+
+    <a href="/foundation/colors.html" class="pv-card">
+      <div class="pv-card__viewport">
+        <iframe src="/foundation/colors.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Color Palettes preview"></iframe>
+      </div>
+      <div class="pv-card__foot">
+        <span class="pv-card__name">Color Palettes</span>
+        <span class="pv-card__arrow">→</span>
+      </div>
+    </a>
+
+    <a href="/foundation/typography.html" class="pv-card">
+      <div class="pv-card__viewport">
+        <iframe src="/foundation/typography.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Typography preview"></iframe>
+      </div>
+      <div class="pv-card__foot">
+        <span class="pv-card__name">Typography</span>
+        <span class="pv-card__arrow">→</span>
+      </div>
+    </a>
+
+    <a href="/foundation/spacing.html" class="pv-card">
+      <div class="pv-card__viewport">
+        <iframe src="/foundation/spacing.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Grid &amp; Spacing preview"></iframe>
+      </div>
+      <div class="pv-card__foot">
+        <span class="pv-card__name">Grid &amp; Spacing</span>
+        <span class="pv-card__arrow">→</span>
+      </div>
+    </a>
+
+    <a href="/foundation/shadows.html" class="pv-card">
+      <div class="pv-card__viewport">
+        <iframe src="/foundation/shadows.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Elevation &amp; Shadows preview"></iframe>
+      </div>
+      <div class="pv-card__foot">
+        <span class="pv-card__name">Elevation &amp; Shadows</span>
+        <span class="pv-card__arrow">→</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+{# ── Components ───────────────────────────────── #}
+<div class="pv-section">
+  <div class="pv-section__head">
+    <span class="pv-section__badge pv-section__badge--components">Components</span>
+    <h2 class="pv-section__title">UI Components</h2>
+    <span class="pv-section__desc">Links · Buttons · Forms · Cards · Chips · Tabs · Accordion · Hero · Header · Footer</span>
+  </div>
+  <div class="pv-grid">
+
+    <a href="/components/links.html" class="pv-card">
+      <div class="pv-card__viewport">
+        <iframe src="/components/links.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Links preview"></iframe>
+      </div>
+      <div class="pv-card__foot">
+        <span class="pv-card__name">Links</span>
+        <span class="pv-card__arrow">→</span>
+      </div>
+    </a>
+
+    <a href="/components/buttons.html" class="pv-card">
+      <div class="pv-card__viewport">
+        <iframe src="/components/buttons.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Buttons &amp; CTAs preview"></iframe>
+      </div>
+      <div class="pv-card__foot">
+        <span class="pv-card__name">Buttons &amp; CTAs</span>
+        <span class="pv-card__arrow">→</span>
+      </div>
+    </a>
+
+    <a href="/components/forms.html" class="pv-card">
+      <div class="pv-card__viewport">
+        <iframe src="/components/forms.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Form Elements preview"></iframe>
+      </div>
+      <div class="pv-card__foot">
+        <span class="pv-card__name">Form Elements</span>
+        <span class="pv-card__arrow">→</span>
+      </div>
+    </a>
+
+    <a href="/components/cards.html" class="pv-card">
+      <div class="pv-card__viewport">
+        <iframe src="/components/cards.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Cards preview"></iframe>
+      </div>
+      <div class="pv-card__foot">
+        <span class="pv-card__name">Cards</span>
+        <span class="pv-card__arrow">→</span>
+      </div>
+    </a>
+
+    <a href="/components/chips.html" class="pv-card">
+      <div class="pv-card__viewport">
+        <iframe src="/components/chips.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Chips / Tags preview"></iframe>
+      </div>
+      <div class="pv-card__foot">
+        <span class="pv-card__name">Chips / Tags</span>
+        <span class="pv-card__arrow">→</span>
+      </div>
+    </a>
+
+    <a href="/components/tabs.html" class="pv-card">
+      <div class="pv-card__viewport">
+        <iframe src="/components/tabs.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Horizontal Tabs preview"></iframe>
+      </div>
+      <div class="pv-card__foot">
+        <span class="pv-card__name">Horizontal Tabs</span>
+        <span class="pv-card__arrow">→</span>
+      </div>
+    </a>
+
+    <a href="/components/accordion.html" class="pv-card">
+      <div class="pv-card__viewport">
+        <iframe src="/components/accordion.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Accordion preview"></iframe>
+      </div>
+      <div class="pv-card__foot">
+        <span class="pv-card__name">Accordion</span>
+        <span class="pv-card__arrow">→</span>
+      </div>
+    </a>
+
+    <a href="/components/hero.html" class="pv-card">
+      <div class="pv-card__viewport">
+        <iframe src="/components/hero.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Hero preview"></iframe>
+      </div>
+      <div class="pv-card__foot">
+        <span class="pv-card__name">Hero</span>
+        <span class="pv-card__arrow">→</span>
+      </div>
+    </a>
+
+    <a href="/components/header.html" class="pv-card">
+      <div class="pv-card__viewport">
+        <iframe src="/components/header.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Header preview"></iframe>
+      </div>
+      <div class="pv-card__foot">
+        <span class="pv-card__name">Header</span>
+        <span class="pv-card__arrow">→</span>
+      </div>
+    </a>
+
+    <a href="/components/footer.html" class="pv-card">
+      <div class="pv-card__viewport">
+        <iframe src="/components/footer.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Footer preview"></iframe>
+      </div>
+      <div class="pv-card__foot">
+        <span class="pv-card__name">Footer</span>
+        <span class="pv-card__arrow">→</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+{# ── Layouts ──────────────────────────────────── #}
+<div class="pv-section">
+  <div class="pv-section__head">
+    <span class="pv-section__badge pv-section__badge--layouts">Layouts</span>
+    <h2 class="pv-section__title">Page Layouts</h2>
+    <span class="pv-section__desc">Grid structures &amp; structural spacing patterns</span>
+  </div>
+  <div class="pv-grid pv-grid--wide">
+
+    <a href="/layouts/single-column.html" class="pv-card">
+      <div class="pv-card__viewport">
+        <iframe src="/layouts/single-column.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Single Column layout preview"></iframe>
+      </div>
+      <div class="pv-card__foot">
+        <span class="pv-card__name">Single Column</span>
+        <span class="pv-card__arrow">→</span>
+      </div>
+    </a>
+
+    <a href="/layouts/multi-column.html" class="pv-card">
+      <div class="pv-card__viewport">
+        <iframe src="/layouts/multi-column.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Multiple Column layout preview"></iframe>
+      </div>
+      <div class="pv-card__foot">
+        <span class="pv-card__name">Multiple Column</span>
+        <span class="pv-card__arrow">→</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+{# ── Templates ────────────────────────────────── #}
+<div class="pv-section">
+  <div class="pv-section__head">
+    <span class="pv-section__badge pv-section__badge--templates">Templates</span>
+    <h2 class="pv-section__title">Page Templates</h2>
+    <span class="pv-section__desc">Full-page template examples combining layouts &amp; components</span>
+  </div>
+  <div class="pv-grid pv-grid--wide">
+
+    <a href="/templates/blog.html" class="pv-card">
+      <div class="pv-card__viewport">
+        <iframe src="/templates/blog.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Blog Post template preview"></iframe>
+      </div>
+      <div class="pv-card__foot">
+        <span class="pv-card__name">Blog Post</span>
+        <span class="pv-card__arrow">→</span>
+      </div>
+    </a>
+
+    <a href="/templates/landing.html" class="pv-card">
+      <div class="pv-card__viewport">
+        <iframe src="/templates/landing.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="Landing Page template preview"></iframe>
+      </div>
+      <div class="pv-card__foot">
+        <span class="pv-card__name">Landing Page</span>
+        <span class="pv-card__arrow">→</span>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+{# ── Pages ────────────────────────────────────── #}
+<div class="pv-section">
+  <div class="pv-section__head">
+    <span class="pv-section__badge pv-section__badge--pages">Pages</span>
+    <h2 class="pv-section__title">Assembled Pages</h2>
+    <span class="pv-section__desc">Real pages built with the design system</span>
+  </div>
+  <div class="pv-grid pv-grid--wide">
+
+    <a href="/about.html" class="pv-card">
+      <div class="pv-card__viewport">
+        <iframe src="/about.html" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" title="About page preview"></iframe>
+      </div>
+      <div class="pv-card__foot">
+        <span class="pv-card__name">About</span>
+        <span class="pv-card__arrow">→</span>
+      </div>
+    </a>
+
+  </div>
+</div>

@@ -58,4 +58,18 @@
       grid-template-columns: 1fr 1fr;
     }
   }
+
+  @media (max-width: 480px) {
+    padding: var(--sp-48) var(--grid-gutter);
+
+    &__inner {
+      grid-template-columns: 1fr;
+    }
+
+    &__bottom {
+      flex-direction: column;
+      gap: var(--sp-8);
+      text-align: center;
+    }
+  }
 }
