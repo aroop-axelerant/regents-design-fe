@@ -1,7 +1,7 @@
 ---
 layout: docs.njk
 title: Header
-description: Sticky floating-pill navigation header with logo, nav links, and optional actions.
+description: Fixed two-pill navigation bar — left pill holds the logo and primary nav, right pill holds Apply, Search, and the hamburger menu trigger.
 section: Components
 sidebar: navigation.components
 permalink: /components/header.html
@@ -9,45 +9,61 @@ permalink: /components/header.html
 
 <div class="docs-section">
   <h2 class="docs-section__title">Default Header</h2>
-  <p class="docs-section__description">The standard header for all public-facing pages. Its sticky position keeps navigation accessible as users scroll, and the glass-blur pill floats above page content without hard-blocking any layout. Use this variant whenever the page has a light or image background directly beneath the nav.</p>
-  <div class="ds-preview ds-preview--warm" style="padding: 0; overflow: hidden; min-height: 80px;">
-    <header class="header" style="position: relative; top: auto;">
-      <div class="header__inner">
-        <div class="header__pill">
-          <a href="#" class="header__logo" aria-label="Regent's University London">
-            <img src="/public/full-logo.svg" alt="Regent's University London" width="142" height="29">
+  <p class="docs-section__description">The standard header for all public-facing pages. Fixed to the top of the viewport so it remains accessible during scroll. The semi-transparent glass pills float above page content without blocking the layout below — this works best when the page hero or background image extends behind the header.</p>
+  <div class="ds-preview ds-preview--dark" style="padding: 0; overflow: hidden; min-height: 80px; position: relative;">
+    <header class="header" style="position: relative; top: auto; left: auto; right: auto;">
+      <div class="header__pill header__left">
+        <a href="#" class="header__logo" aria-label="Regent's University London">
+          <img src="/public/Logo.svg" alt="Regent's University London" width="32" height="32">
+        </a>
+        <nav class="header__nav" aria-label="Primary navigation">
+          <a href="#" class="header__nav-link header__nav-link--active">
+            Study
+            <svg class="header__nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </a>
-          <nav class="header__nav" aria-label="Main navigation">
-            <a href="#" class="header__nav-link">Foundation</a>
-            <a href="#" class="header__nav-link header__nav-link--active">Components</a>
-            <a href="#" class="header__nav-link">Layouts</a>
-            <a href="#" class="header__nav-link">Templates</a>
-          </nav>
-        </div>
+          <a href="#" class="header__nav-link">
+            International
+            <svg class="header__nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <a href="#" class="header__nav-link">
+            Why Regent's
+            <svg class="header__nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+        </nav>
+      </div>
+      <div class="header__pill header__right">
+        <a href="#" class="header__apply">Apply now</a>
+        <div class="header__pill-divider" aria-hidden="true"></div>
+        <button class="header__icon-btn" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <div class="header__pill-divider" aria-hidden="true"></div>
+        <button class="header__icon-btn" aria-label="Open navigation menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
       </div>
     </header>
   </div>
 </div>
 
 <div class="docs-section">
-  <h2 class="docs-section__title">With CTA Actions</h2>
-  <p class="docs-section__description">Add a <code>.header__actions</code> slot when a persistent CTA — Apply Now, Log In — must remain visible at all times regardless of scroll position. Keep to a single button to avoid overloading the pill. Prefer the Small size to maintain the compact feel of the header.</p>
-  <div class="ds-preview ds-preview--warm" style="padding: 0; overflow: hidden; min-height: 80px;">
-    <header class="header" style="position: relative; top: auto;">
-      <div class="header__inner">
-        <div class="header__pill">
-          <a href="#" class="header__logo" aria-label="Regent's University London">
-            <img src="/public/full-logo.svg" alt="Regent's University London" width="142" height="29">
-          </a>
-          <nav class="header__nav" aria-label="Main navigation">
-            <a href="#" class="header__nav-link">About</a>
-            <a href="#" class="header__nav-link">Courses</a>
-            <a href="#" class="header__nav-link">Research</a>
-          </nav>
-          <div class="header__actions">
-            <a href="#" class="btn btn--primary-inverted btn--sm">Apply Now</a>
-          </div>
-        </div>
+  <h2 class="docs-section__title">Mobile (≤768px)</h2>
+  <p class="docs-section__description">Below 768px the primary nav and Apply now link are hidden. The left pill collapses to the logo only; the right pill retains Search and the hamburger trigger (the divider between Apply now and Search is also hidden). This keeps the header compact at 8px vertical padding while preserving the two essential actions.</p>
+  <div class="ds-preview ds-preview--dark" style="padding: 0; overflow: hidden; min-height: 64px; position: relative; max-width: 390px;">
+    <header class="header" style="position: relative; top: auto; left: auto; right: auto; padding: var(--sp-8) var(--sp-16);">
+      <div class="header__pill header__left" style="padding: var(--sp-8);">
+        <a href="#" class="header__logo" aria-label="Regent's University London">
+          <img src="/public/Logo.svg" alt="Regent's University London" width="32" height="32">
+        </a>
+      </div>
+      <div class="header__pill header__right">
+        <button class="header__icon-btn" aria-label="Search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <div class="header__pill-divider" aria-hidden="true"></div>
+        <button class="header__icon-btn" aria-label="Open navigation menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
       </div>
     </header>
   </div>
@@ -56,10 +72,14 @@ permalink: /components/header.html
 <div class="docs-section">
   <h2 class="docs-section__title">Tokens</h2>
   <div class="stack stack--8">
-    <div class="cluster cluster--16"><span class="chip chip--outline">position</span> <span class="text-body">sticky · top 0 · z-index --z-sticky</span></div>
-    <div class="cluster cluster--16"><span class="chip chip--outline">pill background</span> <span class="text-body">rgba(11,25,26, 0.85) + backdrop-filter blur(12px)</span></div>
-    <div class="cluster cluster--16"><span class="chip chip--outline">border-radius</span> <span class="text-body">--radius-l (pill)</span></div>
-    <div class="cluster cluster--16"><span class="chip chip--outline">padding</span> <span class="text-body">--sp-16 vertical · --sp-24 horizontal</span></div>
-    <div class="cluster cluster--16"><span class="chip chip--outline">mobile</span> <span class="text-body">Nav links hidden below 768px</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline">position</span> <span class="text-body">fixed · top 0 · z-index --z-sticky</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline">pill background</span> <span class="text-body">rgba(11,25,26, 0.40) + border rgba(255,255,255, 0.40)</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline">backdrop blur</span> <span class="text-body">blur(40px)</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline">desktop padding</span> <span class="text-body">--sp-16 vertical · --sp-64 horizontal</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline">tablet padding</span> <span class="text-body">--sp-16 vertical · --sp-32 horizontal (≤1279px)</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline">mobile padding</span> <span class="text-body">--sp-8 vertical · --sp-16 horizontal (≤768px)</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline">nav link weight</span> <span class="text-body">--fw-regular with dropdown chevron (16px, 70% opacity)</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline">icon buttons</span> <span class="text-body">32×32px · transparent · hover rgba(255,255,255, 0.12)</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline">divider</span> <span class="text-body">1px wide · 16px tall · white 40% opacity</span></div>
   </div>
 </div>

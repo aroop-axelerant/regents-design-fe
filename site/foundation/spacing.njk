@@ -58,3 +58,95 @@ permalink: /foundation/spacing.html
     <div class="cluster cluster--16"><span class="chip chip--yellow">Wide</span> <span class="text-body">≥ 1600px — 80px gutters, 32px gap</span></div>
   </div>
 </div>
+
+<div class="docs-section">
+  <h2 class="docs-section__title">Page Section Spacing</h2>
+  <p class="docs-section__description">Vertical padding on full-width page sections (heroes, feature blocks, testimonial rows, etc.). These values create the rhythm that separates major content zones. Always apply equally to top and bottom unless a section has an adjacent element that naturally provides the gap (e.g. a header bar or a divider).</p>
+  <div class="stack stack--8">
+    <div class="cluster cluster--16"><span class="chip chip--charcoal">Mobile (&lt;768px)</span> <span class="text-body"><strong>--sp-48</strong> (48px) top + bottom padding per section</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--green">Tablet (768–1279px)</span> <span class="text-body"><strong>--sp-64</strong> (64px) top + bottom padding per section</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--outline">Desktop (1280–1599px)</span> <span class="text-body"><strong>--sp-96</strong> (96px) top + bottom padding per section</span></div>
+    <div class="cluster cluster--16"><span class="chip chip--yellow">Wide (≥1600px)</span> <span class="text-body"><strong>--sp-96</strong> (96px) top + bottom padding per section</span></div>
+  </div>
+  <div class="stack stack--8" style="margin-top: var(--sp-24);">
+    <p class="docs-section__description"><strong>When to adjust:</strong> Hero sections that bleed behind the fixed header should add the header height (74px) to their top padding so content is not obscured. Narrow utility sections (newsletter strips, cookie banners) can use <strong>--sp-48</strong> at all breakpoints to signal lower visual weight.</p>
+  </div>
+</div>
+
+<div class="docs-section">
+  <h2 class="docs-section__title">Template Layout Spacing</h2>
+  <p class="docs-section__description">Guidelines for how sections sit together inside a full page template. Think of this as the vertical gap between two consecutive page sections.</p>
+  <div class="stack stack--16">
+    <div>
+      <h3 class="text-h4" style="margin-bottom: var(--sp-8);">Between major sections</h3>
+      <p class="docs-section__description">No extra gap is needed between sections when each section already carries its own top/bottom padding from the Page Section Spacing rules above. Avoid adding margin between sections — let the padding do the work so sections feel consistently spaced regardless of background colour.</p>
+    </div>
+    <div>
+      <h3 class="text-h4" style="margin-bottom: var(--sp-8);">Hero → first content section</h3>
+      <p class="docs-section__description">The hero naturally provides a large visual break. The first content section below should use standard section padding (<strong>--sp-96</strong> desktop, <strong>--sp-64</strong> tablet, <strong>--sp-48</strong> mobile) — no additional spacing needed.</p>
+    </div>
+    <div>
+      <h3 class="text-h4" style="margin-bottom: var(--sp-8);">Side-by-side (image + text) layouts</h3>
+      <p class="docs-section__description">The gap between the image column and the text column follows the grid gap: <strong>--sp-32</strong> desktop / wide, <strong>--sp-24</strong> tablet. On mobile the columns stack vertically with <strong>--sp-32</strong> between them.</p>
+    </div>
+    <div>
+      <h3 class="text-h4" style="margin-bottom: var(--sp-8);">Grid of cards or tiles</h3>
+      <p class="docs-section__description">Use <strong>--sp-32</strong> column gap and <strong>--sp-32</strong> row gap at desktop. Reduce to <strong>--sp-24</strong> at tablet and <strong>--sp-16</strong> at mobile. This keeps the card grid breathing but avoids excessive whitespace on smaller screens.</p>
+    </div>
+    <div>
+      <h3 class="text-h4" style="margin-bottom: var(--sp-8);">Footer separation</h3>
+      <p class="docs-section__description">No special spacing is needed between the last page section and the footer — the footer's own top padding (<strong>--sp-64</strong>) creates the visual break.</p>
+    </div>
+  </div>
+</div>
+
+<div class="docs-section">
+  <h2 class="docs-section__title">Content Piece Spacing</h2>
+  <p class="docs-section__description">Spacing inside individual components and content pieces. These values govern internal padding, gaps between elements within a card or block, and the vertical rhythm of text.</p>
+  <div class="stack stack--16">
+    <div>
+      <h3 class="text-h4" style="margin-bottom: var(--sp-8);">Card internals</h3>
+      <div class="stack stack--8">
+        <div class="cluster cluster--16"><span class="chip chip--outline">Image → body</span> <span class="text-body">0 — the card image is flush to the card border; padding starts at the body</span></div>
+        <div class="cluster cluster--16"><span class="chip chip--outline">Body padding</span> <span class="text-body"><strong>--sp-24</strong> all sides (desktop) · <strong>--sp-16</strong> all sides (mobile)</span></div>
+        <div class="cluster cluster--16"><span class="chip chip--outline">Tag → title gap</span> <span class="text-body"><strong>--sp-8</strong></span></div>
+        <div class="cluster cluster--16"><span class="chip chip--outline">Title → description gap</span> <span class="text-body"><strong>--sp-8</strong></span></div>
+        <div class="cluster cluster--16"><span class="chip chip--outline">Description → actions gap</span> <span class="text-body"><strong>--sp-16</strong></span></div>
+      </div>
+    </div>
+    <div>
+      <h3 class="text-h4" style="margin-bottom: var(--sp-8);">Text blocks (headings, body, captions)</h3>
+      <div class="stack stack--8">
+        <div class="cluster cluster--16"><span class="chip chip--outline">Heading → paragraph</span> <span class="text-body"><strong>--sp-16</strong></span></div>
+        <div class="cluster cluster--16"><span class="chip chip--outline">Paragraph → paragraph</span> <span class="text-body"><strong>--sp-16</strong></span></div>
+        <div class="cluster cluster--16"><span class="chip chip--outline">Section heading → subheading</span> <span class="text-body"><strong>--sp-8</strong></span></div>
+        <div class="cluster cluster--16"><span class="chip chip--outline">Subheading → body copy</span> <span class="text-body"><strong>--sp-16</strong></span></div>
+        <div class="cluster cluster--16"><span class="chip chip--outline">Body copy → CTA button</span> <span class="text-body"><strong>--sp-32</strong></span></div>
+      </div>
+    </div>
+    <div>
+      <h3 class="text-h4" style="margin-bottom: var(--sp-8);">List items</h3>
+      <div class="stack stack--8">
+        <div class="cluster cluster--16"><span class="chip chip--outline">Dense list (nav, metadata)</span> <span class="text-body"><strong>--sp-8</strong> between items</span></div>
+        <div class="cluster cluster--16"><span class="chip chip--outline">Standard list (links, options)</span> <span class="text-body"><strong>--sp-16</strong> between items</span></div>
+        <div class="cluster cluster--16"><span class="chip chip--outline">Spacious list (feature bullets)</span> <span class="text-body"><strong>--sp-24</strong> between items</span></div>
+      </div>
+    </div>
+    <div>
+      <h3 class="text-h4" style="margin-bottom: var(--sp-8);">Form fields</h3>
+      <div class="stack stack--8">
+        <div class="cluster cluster--16"><span class="chip chip--outline">Label → input</span> <span class="text-body"><strong>--sp-8</strong></span></div>
+        <div class="cluster cluster--16"><span class="chip chip--outline">Input → helper / error text</span> <span class="text-body"><strong>--sp-4</strong></span></div>
+        <div class="cluster cluster--16"><span class="chip chip--outline">Field → field (stacked form)</span> <span class="text-body"><strong>--sp-24</strong></span></div>
+        <div class="cluster cluster--16"><span class="chip chip--outline">Last field → submit button</span> <span class="text-body"><strong>--sp-32</strong></span></div>
+      </div>
+    </div>
+    <div>
+      <h3 class="text-h4" style="margin-bottom: var(--sp-8);">Icon + label pairs</h3>
+      <div class="stack stack--8">
+        <div class="cluster cluster--16"><span class="chip chip--outline">Inline icon gap</span> <span class="text-body"><strong>--sp-8</strong> between icon and text</span></div>
+        <div class="cluster cluster--16"><span class="chip chip--outline">Stacked icon-label</span> <span class="text-body"><strong>--sp-8</strong> between icon and label below</span></div>
+      </div>
+    </div>
+  </div>
+</div>

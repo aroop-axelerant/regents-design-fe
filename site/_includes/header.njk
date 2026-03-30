@@ -1,16 +1,466 @@
 <header class="header">
-  <div class="header__inner">
-    <div class="header__pill">
-      <a href="/" class="header__logo" aria-label="Regent's University London">
-        <img src="/public/full-logo.svg" alt="Regent's University London" width="142" height="29">
+
+  {# ── Left pill: logo + primary nav ── #}
+  <div class="header__pill header__left">
+    <a href="/" class="header__logo" aria-label="Regent's University London">
+      <img src="/public/Logo.svg" alt="Regent's University London" width="32" height="32">
+    </a>
+    <nav class="header__nav" aria-label="Primary navigation">
+      <a href="/foundation/colors.html" class="header__nav-link {% if section == 'foundation' %}header__nav-link--active{% endif %}">
+        Foundation
+        <svg class="header__nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
       </a>
-      <nav class="header__nav" aria-label="Main navigation">
-        <a href="/foundation/colors.html" class="header__nav-link {% if section == 'foundation' %}header__nav-link--active{% endif %}">Foundation</a>
-        <a href="/components/buttons.html" class="header__nav-link {% if section == 'components' %}header__nav-link--active{% endif %}">Components</a>
-        <a href="/layouts/single-column.html" class="header__nav-link {% if section == 'layouts' %}header__nav-link--active{% endif %}">Layouts</a>
-        <a href="/templates/landing.html" class="header__nav-link {% if section == 'templates' %}header__nav-link--active{% endif %}">Templates</a>
-        <a href="/about.html" class="header__nav-link {% if section == 'pages' %}header__nav-link--active{% endif %}">Pages</a>
-      </nav>
+      <a href="/components/buttons.html" class="header__nav-link {% if section == 'components' %}header__nav-link--active{% endif %}">
+        Components
+        <svg class="header__nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </a>
+      <a href="/layouts/single-column.html" class="header__nav-link {% if section == 'layouts' %}header__nav-link--active{% endif %}">
+        Layouts
+        <svg class="header__nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+      </a>
+      <a href="/templates/landing.html" class="header__nav-link {% if section == 'templates' %}header__nav-link--active{% endif %}">Templates</a>
+    </nav>
+  </div>
+
+  {# ── Right pill: apply + search + menu ── #}
+  <div class="header__pill header__right">
+    <a href="#" class="header__apply">Apply now</a>
+    <div class="header__pill-divider" aria-hidden="true"></div>
+    <button class="header__icon-btn" aria-label="Search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      </svg>
+    </button>
+    <div class="header__pill-divider" aria-hidden="true"></div>
+    <button id="mega-menu-open" class="header__icon-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mega-menu">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+</header>
+
+{# ── Mega Menu ── #}
+<div id="mega-menu" class="mega-menu" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Navigation menu">
+
+  {# Sticky top bar — mirrors the header layout #}
+  <div class="mega-menu__bar">
+    <div class="header__pill header__left">
+      <a href="/" class="header__logo" aria-label="Regent's University London">
+        <img src="/public/Logo.svg" alt="Regent's University London" width="32" height="32">
+      </a>
+    </div>
+    <div class="header__pill header__right">
+      <a href="#" class="header__apply">Apply now</a>
+      <div class="header__pill-divider" aria-hidden="true"></div>
+      <button class="header__icon-btn" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+      <div class="header__pill-divider" aria-hidden="true"></div>
+      <button class="mega-menu__close header__icon-btn" aria-label="Close navigation menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
     </div>
   </div>
-</header>
+
+  {# 3-column body #}
+  <div class="mega-menu__body">
+
+    {# ── Back button (mobile detail view) ── #}
+    <button class="mega-menu__back" aria-label="Back to main menu">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+      Back
+    </button>
+
+    {# ── Col 1: Primary nav ── #}
+    <nav class="mega-menu__primary" aria-label="Main navigation sections">
+      <span class="mega-menu__eyebrow" aria-hidden="true">Explore</span>
+      <a href="#" class="mega-menu__plink" data-panel="panel-study">Study</a>
+      <a href="#" class="mega-menu__plink" data-panel="panel-why">Why Regent's</a>
+      <a href="#" class="mega-menu__plink" data-panel="panel-international">International</a>
+      <a href="#" class="mega-menu__plink" data-panel="panel-studentlife">Student Life</a>
+      <a href="#" class="mega-menu__plink" data-panel="panel-admissions">Admissions</a>
+      <a href="#" class="mega-menu__plink" data-panel="panel-schools">Schools</a>
+    </nav>
+
+    {# ── Col 2: Sub-nav panels ── #}
+    <div class="mega-menu__panels">
+
+      {# Study #}
+      <div class="mega-menu__panel" data-panel-id="panel-study">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">Study at Regent's</h3>
+          <p class="mega-menu__panel-desc">Pursue your passions in the heart of London. Choose from a range of undergraduate, postgraduate and professional programmes designed for the ambitious and creative.</p>
+        </div>
+        <nav class="mega-menu__subnav" aria-label="Study options">
+          <a href="#" class="mega-menu__slink" data-detail="detail-ug">
+            Undergraduate
+            <svg class="mega-menu__slink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="mega-menu__slink" data-detail="detail-pg">
+            Postgraduate
+            <svg class="mega-menu__slink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="mega-menu__slink" data-detail="detail-empty">Foundation</a>
+          <a href="#" class="mega-menu__slink" data-detail="detail-empty">Regent's School of English</a>
+          <a href="#" class="mega-menu__slink" data-detail="detail-empty">Study Abroad</a>
+        </nav>
+      </div>
+
+      {# Why Regent's #}
+      <div class="mega-menu__panel" data-panel-id="panel-why">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">Why Regent's?</h3>
+          <p class="mega-menu__panel-desc">Discover what makes Regent's unique — from our Regent's Park campus and global community to industry connections and personalised learning.</p>
+        </div>
+        <nav class="mega-menu__subnav" aria-label="Why Regent's">
+          <a href="#" class="mega-menu__slink" data-detail="detail-why-diff">
+            The Regent's Difference
+            <svg class="mega-menu__slink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="mega-menu__slink" data-detail="detail-why-campus">
+            Our Campus
+            <svg class="mega-menu__slink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="mega-menu__slink" data-detail="detail-empty">Global Community</a>
+          <a href="#" class="mega-menu__slink" data-detail="detail-empty">Industry Connections</a>
+        </nav>
+      </div>
+
+      {# International #}
+      <div class="mega-menu__panel" data-panel-id="panel-international">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">International Students</h3>
+          <p class="mega-menu__panel-desc">Join students from over 140 nationalities at Regent's. Find everything you need to know about studying in London as an international student.</p>
+        </div>
+        <nav class="mega-menu__subnav" aria-label="International">
+          <a href="#" class="mega-menu__slink" data-detail="detail-intl-overview">
+            International Overview
+            <svg class="mega-menu__slink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="mega-menu__slink" data-detail="detail-intl-visa">
+            Visa &amp; Immigration
+            <svg class="mega-menu__slink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="mega-menu__slink" data-detail="detail-empty">Scholarships</a>
+          <a href="#" class="mega-menu__slink" data-detail="detail-empty">English Language Requirements</a>
+        </nav>
+      </div>
+
+      {# Student Life #}
+      <div class="mega-menu__panel" data-panel-id="panel-studentlife">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">Student Life</h3>
+          <p class="mega-menu__panel-desc">Life at Regent's extends far beyond the classroom. Explore everything from student societies and sports to wellbeing and accommodation.</p>
+        </div>
+        <nav class="mega-menu__subnav" aria-label="Student Life">
+          <a href="#" class="mega-menu__slink" data-detail="detail-sl-experience">
+            Student Experience
+            <svg class="mega-menu__slink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="mega-menu__slink" data-detail="detail-sl-accommodation">
+            Accommodation
+            <svg class="mega-menu__slink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="mega-menu__slink" data-detail="detail-sl-clubs">
+            Clubs &amp; Societies
+            <svg class="mega-menu__slink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="mega-menu__slink" data-detail="detail-sl-wellbeing">
+            Wellbeing &amp; Support
+            <svg class="mega-menu__slink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </nav>
+      </div>
+
+      {# Admissions #}
+      <div class="mega-menu__panel" data-panel-id="panel-admissions">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">Admissions</h3>
+          <p class="mega-menu__panel-desc">Find out how to apply, what we look for, and what support is available to help you through the application process.</p>
+        </div>
+        <nav class="mega-menu__subnav" aria-label="Admissions">
+          <a href="#" class="mega-menu__slink" data-detail="detail-adm-apply">
+            How to Apply
+            <svg class="mega-menu__slink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="mega-menu__slink" data-detail="detail-empty">Entry Requirements</a>
+          <a href="#" class="mega-menu__slink" data-detail="detail-adm-fees">
+            Fees &amp; Funding
+            <svg class="mega-menu__slink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="mega-menu__slink" data-detail="detail-adm-opendays">
+            Open Days
+            <svg class="mega-menu__slink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </nav>
+      </div>
+
+      {# Schools #}
+      <div class="mega-menu__panel" data-panel-id="panel-schools">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">Our Schools</h3>
+          <p class="mega-menu__panel-desc">Regent's is home to four specialist schools, each offering a focused academic environment where creative and professional ambition thrive.</p>
+        </div>
+        <nav class="mega-menu__subnav" aria-label="Schools">
+          <a href="#" class="mega-menu__slink" data-detail="detail-schools-psych">
+            School of Psychotherapy &amp; Psychology
+            <svg class="mega-menu__slink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="mega-menu__slink" data-detail="detail-schools-business">
+            School of Business
+            <svg class="mega-menu__slink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="mega-menu__slink" data-detail="detail-schools-arts">
+            School of Arts &amp; Culture
+            <svg class="mega-menu__slink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="#" class="mega-menu__slink" data-detail="detail-schools-law">
+            School of Law
+            <svg class="mega-menu__slink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><polyline points="9 18 15 12 9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </nav>
+      </div>
+
+    </div>{# /.mega-menu__panels #}
+
+    {# ── Col 3: Detail panels ── #}
+    <div class="mega-menu__details">
+
+      {# Study — Undergraduate #}
+      <div class="mega-menu__detail" data-detail-id="detail-ug">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">Undergraduate</h3>
+          <p class="mega-menu__panel-desc">Explore our broad range of creative, business and social science programmes — all taught in the heart of London.</p>
+        </div>
+        <nav class="mega-menu__courselist" aria-label="Undergraduate subjects">
+          <a href="#" class="mega-menu__clink">Acting <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Advertising, Marketing &amp; Media <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Architecture &amp; Interior Design <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Art History <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Business &amp; Management <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Fashion <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Film Production &amp; Screenwriting <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">International Relations <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Law <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Psychology <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </nav>
+      </div>
+
+      {# Study — Postgraduate #}
+      <div class="mega-menu__detail" data-detail-id="detail-pg">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">Postgraduate</h3>
+          <p class="mega-menu__panel-desc">Advance your career with a postgraduate degree from Regent's — where specialist knowledge meets professional ambition.</p>
+        </div>
+        <nav class="mega-menu__courselist" aria-label="Postgraduate subjects">
+          <a href="#" class="mega-menu__clink">Global Business <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">International Management <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Luxury Brand Management <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Film &amp; Screen Studies <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Psychology &amp; Counselling <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Fashion Marketing <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </nav>
+      </div>
+
+      {# Why — Regent's Difference #}
+      <div class="mega-menu__detail" data-detail-id="detail-why-diff">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">The Regent's Difference</h3>
+          <p class="mega-menu__panel-desc">Discover what sets Regent's apart — an education built around you, in one of the world's most inspiring cities.</p>
+        </div>
+        <nav class="mega-menu__courselist" aria-label="The Regent's Difference">
+          <a href="#" class="mega-menu__clink">Unique Curriculum <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Small Class Sizes <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Global Perspectives <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </nav>
+      </div>
+
+      {# Why — Our Campus #}
+      <div class="mega-menu__detail" data-detail-id="detail-why-campus">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">Our Campus</h3>
+          <p class="mega-menu__panel-desc">Study in the heart of London — our Regent's Park campus is a place of beauty, creativity and possibility.</p>
+        </div>
+        <nav class="mega-menu__courselist" aria-label="Our Campus">
+          <a href="#" class="mega-menu__clink">Central London Location <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Campus Facilities <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">On-site Accommodation <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </nav>
+      </div>
+
+      {# International — Overview #}
+      <div class="mega-menu__detail" data-detail-id="detail-intl-overview">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">International Overview</h3>
+          <p class="mega-menu__panel-desc">Everything you need to know about joining Regent's as an international student — wherever you are in the world.</p>
+        </div>
+        <nav class="mega-menu__courselist" aria-label="International Overview">
+          <a href="#" class="mega-menu__clink">Meet Us in Your Country <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Working with Agents <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Country-specific Requirements <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </nav>
+      </div>
+
+      {# International — Visa #}
+      <div class="mega-menu__detail" data-detail-id="detail-intl-visa">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">Visa &amp; Immigration</h3>
+          <p class="mega-menu__panel-desc">Guidance on student visas and everything you need to study in the UK.</p>
+        </div>
+        <nav class="mega-menu__courselist" aria-label="Visa and Immigration">
+          <a href="#" class="mega-menu__clink">Student Visas <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">CAS Numbers <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </nav>
+      </div>
+
+      {# Student Life — Experience #}
+      <div class="mega-menu__detail" data-detail-id="detail-sl-experience">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">Student Experience</h3>
+          <p class="mega-menu__panel-desc">From your first day to graduation and beyond — we support you every step of the way.</p>
+        </div>
+        <nav class="mega-menu__courselist" aria-label="Student Experience">
+          <a href="#" class="mega-menu__clink">Freshers' Week <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Student Union <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </nav>
+      </div>
+
+      {# Student Life — Accommodation #}
+      <div class="mega-menu__detail" data-detail-id="detail-sl-accommodation">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">Accommodation</h3>
+          <p class="mega-menu__panel-desc">Live on campus in Regent's Park — one of the most beautiful settings in London.</p>
+        </div>
+        <nav class="mega-menu__courselist" aria-label="Accommodation">
+          <a href="#" class="mega-menu__clink">On-campus Halls <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Private Housing <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </nav>
+      </div>
+
+      {# Student Life — Clubs #}
+      <div class="mega-menu__detail" data-detail-id="detail-sl-clubs">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">Clubs &amp; Societies</h3>
+          <p class="mega-menu__panel-desc">Get involved, make friends, and discover new passions outside the lecture theatre.</p>
+        </div>
+        <nav class="mega-menu__courselist" aria-label="Clubs and Societies">
+          <a href="#" class="mega-menu__clink">Sports Clubs <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Arts &amp; Culture Societies <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </nav>
+      </div>
+
+      {# Student Life — Wellbeing #}
+      <div class="mega-menu__detail" data-detail-id="detail-sl-wellbeing">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">Wellbeing &amp; Support</h3>
+          <p class="mega-menu__panel-desc">Your mental health and wellbeing matter. Our dedicated team is here to help you thrive.</p>
+        </div>
+        <nav class="mega-menu__courselist" aria-label="Wellbeing and Support">
+          <a href="#" class="mega-menu__clink">Counselling Services <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Disability Support <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </nav>
+      </div>
+
+      {# Admissions — How to Apply #}
+      <div class="mega-menu__detail" data-detail-id="detail-adm-apply">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">How to Apply</h3>
+          <p class="mega-menu__panel-desc">Ready to join us? Here is everything you need to make a strong application.</p>
+        </div>
+        <nav class="mega-menu__courselist" aria-label="How to Apply">
+          <a href="#" class="mega-menu__clink">UCAS Applications <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Direct Applications <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </nav>
+      </div>
+
+      {# Admissions — Fees & Funding #}
+      <div class="mega-menu__detail" data-detail-id="detail-adm-fees">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">Fees &amp; Funding</h3>
+          <p class="mega-menu__panel-desc">Transparent fee information and funding opportunities to help make your education possible.</p>
+        </div>
+        <nav class="mega-menu__courselist" aria-label="Fees and Funding">
+          <a href="#" class="mega-menu__clink">Tuition Fees <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Scholarships <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Student Finance <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </nav>
+      </div>
+
+      {# Admissions — Open Days #}
+      <div class="mega-menu__detail" data-detail-id="detail-adm-opendays">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">Open Days</h3>
+          <p class="mega-menu__panel-desc">See the campus for yourself. Book a place at one of our upcoming open days.</p>
+        </div>
+        <nav class="mega-menu__courselist" aria-label="Open Days">
+          <a href="#" class="mega-menu__clink">Undergraduate Open Days <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Postgraduate Open Days <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </nav>
+      </div>
+
+      {# Schools — Psychotherapy & Psychology #}
+      <div class="mega-menu__detail" data-detail-id="detail-schools-psych">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">School of Psychotherapy &amp; Psychology</h3>
+          <p class="mega-menu__panel-desc">A pioneering school offering a range of programmes grounded in clinical practice and research.</p>
+        </div>
+        <nav class="mega-menu__courselist" aria-label="Psychotherapy and Psychology">
+          <a href="#" class="mega-menu__clink">Counselling Psychology <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">Integrative Psychotherapy <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </nav>
+      </div>
+
+      {# Schools — Business #}
+      <div class="mega-menu__detail" data-detail-id="detail-schools-business">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">School of Business</h3>
+          <p class="mega-menu__panel-desc">Develop the commercial acumen and global mindset to succeed in business at every level.</p>
+        </div>
+        <nav class="mega-menu__courselist" aria-label="School of Business">
+          <a href="#" class="mega-menu__clink">MBA <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">BA Business &amp; Management <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">MSc International Management <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </nav>
+      </div>
+
+      {# Schools — Arts & Culture #}
+      <div class="mega-menu__detail" data-detail-id="detail-schools-arts">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">School of Arts &amp; Culture</h3>
+          <p class="mega-menu__panel-desc">Nurturing the next generation of creative professionals in film, fashion, performance and design.</p>
+        </div>
+        <nav class="mega-menu__courselist" aria-label="School of Arts and Culture">
+          <a href="#" class="mega-menu__clink">BA Acting <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">BA Fashion <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">BA Film Production <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </nav>
+      </div>
+
+      {# Schools — Law #}
+      <div class="mega-menu__detail" data-detail-id="detail-schools-law">
+        <div class="mega-menu__panel-intro">
+          <h3 class="mega-menu__panel-title">School of Law</h3>
+          <p class="mega-menu__panel-desc">Build a career in law with a rigorous, practice-focused education in the heart of the UK's legal capital.</p>
+        </div>
+        <nav class="mega-menu__courselist" aria-label="School of Law">
+          <a href="#" class="mega-menu__clink">LLB Law <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#" class="mega-menu__clink">LLM International Law <svg class="mega-menu__clink-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </nav>
+      </div>
+
+      {# Empty fallback for slinks without detail panels #}
+      <div class="mega-menu__detail" data-detail-id="detail-empty"></div>
+
+    </div>{# /.mega-menu__details #}
+
+  </div>{# /.mega-menu__body #}
+
+</div>{# /#mega-menu #}

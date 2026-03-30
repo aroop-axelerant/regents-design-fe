@@ -6,6 +6,7 @@ import { Tabs } from './components/tabs.js';
 import { Accordion } from './components/accordion.js';
 import { Modal } from './components/modal.js';
 import { Dropdown } from './components/dropdown.js';
+import { MegaMenu } from './components/mega-menu.js';
 
 // Import styles
 import '../styles/main.scss';
@@ -22,6 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize Dropdowns
   document.querySelectorAll('.dropdown').forEach((el) => new Dropdown(el));
+
+  // Initialize Mega Menu
+  const megaMenuEl = document.querySelector('.mega-menu');
+  if (megaMenuEl) new MegaMenu(megaMenuEl);
 
   // ── Mobile navigation ──────────────────────────
   const hamburger = document.getElementById('docs-hamburger');
