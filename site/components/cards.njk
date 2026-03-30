@@ -8,24 +8,42 @@ permalink: /components/cards.html
 ---
 
 <div class="docs-section">
-  <h2 class="docs-section__title">Standard Card</h2>
-  <p class="docs-section__description">Use for browsable content that requires action — article feeds or general programme listings without structured metadata. Pairs a body (title, description, meta chip) with an actions row. Best displayed in 2–4 column grids.</p>
+  <h2 class="docs-section__title">Article Card</h2>
+  <p class="docs-section__description">Use for editorial content feeds — news, insights, research, and blog posts. The entire card is a link, so no separate CTA button is needed. The image draws the eye, the category chip gives instant context, the serif title creates a reading-oriented feel, and the meta footer (date + reading time) sets expectations before the user commits to clicking. Display in 2–3 column grids at desktop; single column on mobile. Avoid using this card for transactional content such as course listings or programme directories — use the Course Card variant for those instead.</p>
   <div class="ds-preview">
-    <div class="ds-preview__content">
-      <div class="card" style="max-width: 340px;">
+    <div class="ds-preview__content" style="gap: var(--sp-24); align-items: stretch;">
+      <a href="#" class="card card--article" style="max-width: 340px;">
+        <div class="card__image">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=680&q=80" alt="Students on campus">
+        </div>
         <div class="card__body">
-          <h3 class="card__title">Business Management BA (Hons)</h3>
-          <p class="card__description">Develop practical business skills and strategic thinking in the heart of London.</p>
+          <div class="card__chips">
+            <span class="chip chip--green">Research</span>
+          </div>
+          <h3 class="card__title">How Small Class Sizes Shape Graduate Outcomes</h3>
+          <p class="card__desc">New longitudinal data from Regent's reveals a direct link between cohort size and first-destination employment rates across creative disciplines.</p>
           <div class="card__meta">
-            <span class="chip chip--green">Undergraduate</span>
-            <span>3 years full-time</span>
+            <span>12 Jun 2025</span>
+            <span>4 min read</span>
           </div>
         </div>
-        <div class="card__actions">
-          <a href="#" class="btn btn--primary btn--sm">Apply Now</a>
-          <a href="#" class="btn btn--ghost btn--sm">Learn More</a>
+      </a>
+      <a href="#" class="card card--article" style="max-width: 340px;">
+        <div class="card__image">
+          <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=680&q=80" alt="London cityscape">
         </div>
-      </div>
+        <div class="card__body">
+          <div class="card__chips">
+            <span class="chip chip--violet">Opinion</span>
+          </div>
+          <h3 class="card__title">Why London Remains the World's Most Valuable Classroom</h3>
+          <p class="card__desc">From internship networks to cultural access, the case for studying in the capital has never been stronger.</p>
+          <div class="card__meta">
+            <span>3 May 2025</span>
+            <span>6 min read</span>
+          </div>
+        </div>
+      </a>
     </div>
   </div>
 </div>

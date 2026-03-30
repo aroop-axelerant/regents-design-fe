@@ -30,6 +30,12 @@
     ]
   },
   {
+    "title": "Content Blocks",
+    "items": [
+      { "label": "Icon + Text", "url": "/content-blocks/icon-text.html" }
+    ]
+  },
+  {
     "title": "Layouts",
     "items": [
       { "label": "Single Column",   "url": "/layouts/single-column.html" },

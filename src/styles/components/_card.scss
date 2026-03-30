@@ -116,6 +116,50 @@
     }
   }
 
+  /* ── Article Card ── */
+  &--article {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+
+    .card__chips {
+      margin-bottom: var(--sp-4);
+    }
+
+    .card__title {
+      font-family: var(--font-serif);
+      font-size: var(--text-h4);
+      font-weight: var(--fw-semibold);
+      line-height: var(--lh-h4);
+      color: var(--color-text);
+      margin-bottom: var(--sp-8);
+      transition: color var(--ease);
+    }
+
+    &:hover .card__title {
+      color: var(--color-action-primary);
+    }
+
+    .card__desc {
+      font-family: var(--font-sans);
+      font-size: var(--text-body);
+      line-height: var(--lh-body);
+      color: var(--color-text-secondary);
+      flex: 1;
+    }
+
+    .card__meta {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-16);
+      font-size: var(--text-small);
+      color: var(--color-text-tertiary);
+      padding-top: var(--sp-16);
+      border-top: var(--border-xs) solid var(--color-border);
+      margin-top: var(--sp-16);
+    }
+  }
+
   /* ── Course Card & Related Course Card — shared structure ── */
   &--course,
   &--course-light,

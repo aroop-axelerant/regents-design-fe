@@ -1,0 +1,70 @@
+/* ================================================================
+   ICON + TEXT — Content block: coloured icon box, heading, body
+   ================================================================ */
+
+.icon-text {
+  display: flex;
+  flex-direction: column;
+
+  /* ── Icon box ── */
+  &__icon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-m);
+    background-color: var(--color-bg-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-bottom: var(--sp-32);
+
+    svg {
+      width: 32px;
+      height: 32px;
+      display: block;
+      color: var(--color-text);
+    }
+  }
+
+  /* ── Icon colour modifiers ── */
+  &__icon--yellow { background-color: var(--color-bg-accent); }
+
+  &__icon--violet { background-color: var(--color-bg-violet); }
+
+  &__icon--peach  { background-color: var(--color-bg-peach); }
+
+  &__icon--green {
+    background-color: var(--color-bg-brand);
+    svg { color: var(--color-text-inverted); }
+  }
+
+  /* ── Heading ── */
+  &__title {
+    font-family: var(--font-sans);
+    font-size: var(--text-h3);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-h3);
+    color: var(--color-text);
+    margin-bottom: var(--sp-16);
+  }
+
+  /* ── Body text ── */
+  &__body {
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--lh-body);
+    color: var(--color-text-secondary);
+  }
+
+  /* ── Dark variant ── */
+  &--dark {
+    .icon-text__icon {
+      background-color: rgba(255, 255, 255, 0.10);
+      svg { color: var(--color-text-inverted); }
+    }
+
+    .icon-text__title { color: var(--color-text-inverted); }
+
+    .icon-text__body { color: rgba(255, 255, 255, 0.65); }
+  }
+}
