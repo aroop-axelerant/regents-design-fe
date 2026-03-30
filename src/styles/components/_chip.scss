@@ -61,6 +61,12 @@
     border-color: var(--color-bg-peach);
   }
 
+  &--white {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--color-text-inverted);
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
   /* ── Dismissible ── */
   &__close {
     display: inline-flex;
